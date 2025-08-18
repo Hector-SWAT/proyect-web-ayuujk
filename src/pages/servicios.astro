@@ -1,0 +1,125 @@
+---
+// src/pages/servicios.astro
+import Layout from "../layouts/Layout.astro";
+
+import MobileMenu from "../components/MobileMenu.astro";
+---
+
+<Layout title="AYUUJK - Servicios de Taxi en Los Angeles">
+    <div class="min-h-screen relative overflow-hidden bg-gray-900">
+        <!-- Fondo optimizado -->
+        <div
+            class="absolute inset-0 bg-[url('/services-icon/Fondo-services.png')] bg-cover bg-center opacity-70"
+        >
+        </div>
+
+        <!-- Barra lateral simplificada -->
+        <!-- Aquí ya es HTML -->
+        <div
+            class="fixed right-0 top-0 h-full w-16 z-50 flex items-center justify-center"
+        >
+            <button class="p-4 hover:scale-110 transition-transform">
+                <img
+                    src="/services-icon/slide-services.png"
+                    alt="Menú"
+                    class="w-10 h-10"
+                />
+                
+            </button>
+
+            <MobileMenu />
+        </div>
+
+        <!-- Contenido principal -->
+        <main class="relative z-10 max-w-2xl mx-auto px-6 py-20">
+            <!-- Encabezado -->
+            <div class="text-center mb-12">
+                <img
+                    src="/logo.png"
+                    alt="AYUUJK"
+                    class="w-24 h-24 mx-auto mb-6"
+                />
+                <h1 class="text-5xl font-bold text-white mb-2">AYUUJK</h1>
+                <div class="w-32 h-1 bg-yellow-400 mx-auto"></div>
+            </div>
+
+            <!-- Imagen del taxi -->
+            <img
+                src="/services-icon/taxi-services.png"
+                alt="Taxi"
+                class="w-64 mx-auto mb-12"
+            />
+
+            <!-- Lista de servicios simplificada -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-4 text-white">
+                    <img
+                        src="/services-icon/24hr-icon.png"
+                        alt="24/7"
+                        class="w-12 h-12"
+                    />
+                    <div>
+                        <h3 class="text-xl font-semibold">Servicio 24/7</h3>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 text-white">
+                    <img
+                        src="/services-icon/taximini-icon.png"
+                        alt="Transferencias"
+                        class="w-12 h-12"
+                    />
+                    <div>
+                        <h3 class="text-xl font-semibold">Transferencias</h3>
+                        <p class="text-gray-300 text-sm">Urbanas</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 text-white">
+                    <img
+                        src="/services-icon/avion-icon.png"
+                        alt="Aeropuerto"
+                        class="w-12 h-12"
+                    />
+                    <div>
+                        <h3 class="text-xl font-semibold">
+                            Viajes al aeropuerto
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 text-white">
+                    <img
+                        src="/services-icon/delivery-icon.png"
+                        alt="Entrega"
+                        class="w-12 h-12"
+                    />
+                    <div>
+                        <h3 class="text-xl font-semibold">
+                            Servicio de Entrega
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</Layout>
+
+<style is:global>
+    /* Estilos mínimos necesarios */
+    body {
+        @apply bg-gray-900 text-white;
+        font-family: "Poppins", sans-serif;
+    }
+
+    h1 {
+        @apply text-5xl font-bold;
+        font-family: "Oswald", sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Efecto hover sutil para los items */
+    .flex.items-center.gap-4 {
+        @apply p-4 rounded-lg transition-colors hover:bg-gray-800/50;
+    }
+</style>

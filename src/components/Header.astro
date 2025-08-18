@@ -1,0 +1,141 @@
+---
+// src/components/Header.astro
+import MobileMenu from "./MobileMenu.astro";
+---
+
+<!-- Header flotante que no interfiere con el contenido -->
+<header
+    class="absolute top-0 left-0 right-0 flex justify-between items-center p-4 pt-12 z-50 bg-gradient-to-b from-black/0 to-transparent"
+>
+    <!-- Logo -->
+    <div class="flex items-center ml-4">
+        <a href="/" class="flex items-center">
+            <img
+                src="/logo.png"
+                alt="AYUUJK Logo"
+                class="w-16 h-16 object-contain"
+            />
+        </a>
+    </div>
+
+    <!-- Menú hamburguesa -->
+    <mobile-menu-toggle
+        class="w-12 h-12 flex flex-col justify-center items-start p-2 bg-[#22272B] rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 relative mr-4 cursor-pointer"
+    >
+        <span class="w-5 h-0.5 bg-yellow-400 rounded shadow-lg mb-1"></span>
+        <span class="w-7 h-0.5 bg-yellow-400 rounded shadow-lg mb-1"></span>
+        <span class="w-8 h-0.5 bg-yellow-400 rounded shadow-lg"></span>
+    </mobile-menu-toggle>
+</header>
+
+<!-- Componente del menú móvil -->
+<MobileMenu />
+
+<script>
+    // Define el elemento personalizado para el botón hamburguesa
+    class MobileMenuToggle extends HTMLElement {
+        // Declarar propiedades de la clase con tipos explícitos
+        menuOverlay: HTMLElement | null = null;
+        closeMenuButton: HTMLElement | null = null;
+        menuLines: NodeListOf<HTMLSpanElement> | null = null;
+        isMenuOpen: boolean = false;
+
+        constructor() {
+            super();
+            this.isMenuOpen = false;
+
+            // Event listener para abrir/cerrar el menú
+            this.addEventListener("click", () => {
+                this.toggleMenu();
+            });
+
+            // Esperar a que el DOM esté completamente cargado
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", () => {
+                    this.initializeMenu();
+                });
+            } else {
+                this.initializeMenu();
+            }
+        }
+
+        initializeMenu(): void {
+            // Ahora buscar el overlay del menú
+            this.menuOverlay = document.getElementById("menuOverlay");
+            this.closeMenuButton = document.getElementById("closeMenu");
+            this.menuLines = this.querySelectorAll("span");
+
+            // Event listener para el botón cerrar
+            if (this.closeMenuButton) {
+                this.closeMenuButton.addEventListener("click", () => {
+                    this.closeMenu();
+                });
+            }
+
+            // Cerrar menú al hacer clic fuera de los botones
+            if (this.menuOverlay) {
+                this.menuOverlay.addEventListener("click", (e: Event) => {
+                    if (e.target === this.menuOverlay) {
+                        this.closeMenu();
+                    }
+                });
+            }
+
+            // Cerrar menú con tecla Escape
+            document.addEventListener("keydown", (e: KeyboardEvent) => {
+                if (e.key === "Escape" && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+        }
+
+        toggleMenu(): void {
+            if (!this.menuOverlay) return;
+
+            if (this.isMenuOpen) {
+                this.closeMenu();
+            } else {
+                this.openMenu();
+            }
+        }
+
+        openMenu(): void {
+            if (!this.menuOverlay || !this.menuLines) return;
+
+            this.menuOverlay.classList.remove("opacity-0", "invisible");
+            this.menuOverlay.classList.add("opacity-100", "visible");
+
+            // Animación del hamburger a X
+            if (this.menuLines[0])
+                this.menuLines[0].style.transform =
+                    "rotate(45deg) translate(6px, 6px)";
+            if (this.menuLines[1]) this.menuLines[1].style.opacity = "0";
+            if (this.menuLines[2])
+                this.menuLines[2].style.transform =
+                    "rotate(-45deg) translate(6px, -6px)";
+
+            // Prevenir scroll del body
+            document.body.style.overflow = "hidden";
+            this.isMenuOpen = true;
+        }
+
+        closeMenu(): void {
+            if (!this.menuOverlay || !this.menuLines) return;
+
+            this.menuOverlay.classList.remove("opacity-100", "visible");
+            this.menuOverlay.classList.add("opacity-0", "invisible");
+
+            // Restaurar hamburger
+            if (this.menuLines[0]) this.menuLines[0].style.transform = "none";
+            if (this.menuLines[1]) this.menuLines[1].style.opacity = "1";
+            if (this.menuLines[2]) this.menuLines[2].style.transform = "none";
+
+            // Restaurar scroll del body
+            document.body.style.overflow = "auto";
+            this.isMenuOpen = false;
+        }
+    }
+
+    // Registrar el elemento personalizado
+    customElements.define("mobile-menu-toggle", MobileMenuToggle);
+</script>
