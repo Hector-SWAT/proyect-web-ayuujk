@@ -1,0 +1,231 @@
+---
+// src/pages/constacto.astro
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+---
+<!-- /* =========================================================
+   Proyecto desarrollado con Astro + TailwindCSS + Node.js
+   Autores: Hector-SWAT & Luis
+   Año: 2025
+========================================================= */ -->
+
+<Layout title="AYUUJK - Taxi Service in Los Angeles">
+	<Header />
+	
+	<!-- Contenido principal con imagen de fondo - ESTRUCTURA CORREGIDA -->
+	<div
+		class="min-h-screen bg-cover bg-center bg-no-repeat relative"
+		style="background-image: url('/background.png');"
+	>
+		<!-- Overlay opcional para mejor legibilidad del texto -->
+		<div class="absolute inset-0 bg-black bg-opacity-10"></div>
+
+		<!-- Contenido principal - UN SOLO MAIN CON ESPACIADO ORIGINAL -->
+		<main class="flex flex-col items-center px-6 min-h-screen relative">
+			<!-- SECCIÓN SUPERIOR (equivale al primer main original) -->
+			<div class="w-full flex justify-center">
+				<div
+					class="w-3 h-3 bg-yellow-400 rounded-full absolute"
+					style="top: 130px; left: 300px; box-shadow: 0 0 8px 4px rgba(255, 200, 0, 0.6);"
+				>
+				</div>
+			</div>
+
+			<!-- SECCIÓN PRINCIPAL (equivale al segundo main con pt-36) -->
+			<div class="flex flex-col items-center px-6 pt-36">
+				<!-- Título principal -->
+				<div class="text-center mb-12">
+					<h1
+						class="text-4xl font-Oswald font-semibold mb-4 tracking-wider"
+						style="color: #FFFFFF;"
+					>
+						AYUUJK
+					</h1>
+					<h2
+						class="text-3xl font-Popins font-bold tracking-wide glowing-text-shadow mb-1"
+						style="color: #FFA500;"
+					>
+						TAXI SERVICE IN
+					</h2>
+					<h2
+						class="text-3xl font-poppins font-bold tracking-wide glowing-text-shadow"
+						style="color: #FFA500;"
+					>
+						LOS ANGELES
+					</h2>
+				</div>
+
+				<!-- Imagen del taxi -->
+				<div class="relative mb-12">
+					<img
+						src="/taxi.png"
+						alt="Taxi AYUUJK"
+						class="w-150 h-80 object-contain"
+					/>
+				</div>
+
+				<!-- Botón de reserva -->
+				<button
+					class="glowing-button bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 mb-12 relative z-10"
+				>
+					RESERVA TU TAXI
+					<!-- Flecha PNG -->
+					<img
+						src="/icons/flecha.png"
+						alt="flecha"
+						class="absolute -bottom-1 -right-1 w-8 h-8"
+					/>
+				</button>
+
+				<!-- Iconos de redes sociales -->
+				<div class="flex space-x-6 mb-8">
+					<!-- TikTok Icon -->
+					<a
+						href="https://www.tiktok.com/@taxi.ayuujk?_t=ZM-8yuaP5Ik8RB&_r=1"
+						class="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
+					>
+						<img src="/icons/tiktok.png" alt="TikTok" class="w-8 h-8" />
+					</a>
+
+					<!-- WhatsApp Icon -->
+					<a
+						href="https://wa.me/50379109103?text=Hola%2C%20Tiene%20pan.%20xd"
+						target="_blank"
+						class="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
+					>
+						<img
+							src="/icons/whatsapp.png"
+							alt="WhatsApp"
+							class="w-8 h-8"
+						/>
+					</a>
+
+					<!-- Facebook Icon -->
+					<a
+						href="https://www.facebook.com/taxi.ayuujk.tlahui?rdid=yBFGZViq58lE2mNs&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AfGgjx281%2F"
+						class="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
+					>
+						<img
+							src="/icons/facebook.png"
+							alt="Facebook"
+							class="w-8 h-8"
+						/>
+					</a>
+				</div>
+			</div>
+
+			<!-- Indicador de home (FIXED como en el original) -->
+			<div
+				class="fixed bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white rounded-full"
+			>
+			</div>
+		</main>
+	</div>
+</Layout>
+
+<!-- ESTILOS CSS COMPLETOS -->
+<style>
+	/* Efecto brillante para el texto con sombras negras difuminadas */
+	.glowing-text-shadow {
+		text-shadow: 
+			3px 3px 8px rgba(0, 0, 0, 0.8),
+			6px 6px 15px rgba(0, 0, 0, 0.6),
+			9px 9px 25px rgba(0, 0, 0, 0.4),
+			0 0 10px rgba(255, 188, 7, 0.6),
+			0 0 20px rgba(255, 188, 7, 0.4),
+			0 0 30px rgba(255, 188, 7, 0.2);
+		animation: textGlowShadow 2s ease-in-out infinite;
+	}
+
+	/* Animación para el texto brillante con sombras */
+	@keyframes textGlowShadow {
+		0%,
+		100% {
+			text-shadow: 
+				3px 3px 8px rgba(0, 0, 0, 0.8),
+				6px 6px 15px rgba(0, 0, 0, 0.6),
+				9px 9px 25px rgba(0, 0, 0, 0.4),
+				0 0 10px rgba(255, 188, 7, 0.6),
+				0 0 20px rgba(255, 188, 7, 0.4),
+				0 0 30px rgba(255, 188, 7, 0.2);
+		}
+		50% {
+			text-shadow: 
+				4px 4px 12px rgba(0, 0, 0, 0.9),
+				8px 8px 20px rgba(0, 0, 0, 0.7),
+				12px 12px 35px rgba(0, 0, 0, 0.5),
+				0 0 15px rgba(255, 188, 7, 0.8),
+				0 0 25px rgba(255, 188, 7, 0.6),
+				0 0 40px rgba(255, 188, 7, 0.3);
+		}
+	}
+
+	/* Animación de parpadeo/brillo dorado para el botón */
+	@keyframes goldGlow {
+		0%,
+		100% {
+			box-shadow:
+				0 0 20px rgba(0, 0, 0, 0.8),
+				0 0 40px rgba(255, 215, 0, 0.4),
+				0 0 60px rgba(255, 215, 0, 0.2),
+				inset 0 0 20px rgba(255, 215, 0, 0.1);
+			transform: scale(1);
+		}
+		50% {
+			box-shadow:
+				0 0 25px rgba(0, 0, 0, 0.9),
+				0 0 50px rgba(255, 215, 0, 0.6),
+				0 0 80px rgba(255, 215, 0, 0.3),
+				inset 0 0 30px rgba(255, 215, 0, 0.2);
+			transform: scale(1.05);
+		}
+	}
+
+	/* Clase personalizada para el botón brillante */
+	.glowing-button {
+		animation: goldGlow 2s ease-in-out infinite;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+		position: relative;
+		overflow: hidden;
+	}
+
+	/* Efecto de brillo que se mueve por el botón */
+	.glowing-button::before {
+		content: "";
+		position: absolute;
+		top: -2px;
+		left: -100%;
+		width: 100%;
+		height: calc(100% + 4px);
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.4),
+			transparent
+		);
+		transition: left 0.5s;
+	}
+
+	.glowing-button:hover::before {
+		left: 100%;
+	}
+
+	/* Hover effect más intenso para el botón */
+	.glowing-button:hover {
+		animation-duration: 1s;
+		box-shadow:
+			0 0 30px rgba(0, 0, 0, 1),
+			0 0 60px rgba(255, 215, 0, 0.8),
+			0 0 100px rgba(255, 215, 0, 0.4),
+			inset 0 0 40px rgba(255, 215, 0, 0.3);
+		transform: scale(1.1);
+	}
+
+	/* Estilos para LETRAS DE TAXI IN LOS ANGELES*/
+	.glowing-text-shadow {
+		text-shadow: 0 0 8px #ffa500;
+		font-variant-ligatures: common-ligatures;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+</style>
