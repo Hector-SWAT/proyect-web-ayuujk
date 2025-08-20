@@ -13,17 +13,21 @@ import MobileMenu from "../components/MobileMenu.astro";
 <Layout title="AYUUJK - Servicios de Taxi en Los Angeles">
     <div
         class="min-h-screen bg-cover bg-center bg-no-repeat relative"
-        style="background-image: url('/services-icon/Fondo-services.png');"
+        style="background-image: url('/about-icons/fondo-about.png');"
     >
-        <!-- Elemento decorativo amarillo latera FUNCIONA -->
-        <div class="absolute right-0 top-0 w-24 h-full">
+        <!-- Overlay para mejorar legibilidad -->
+        <div class="absolute inset-0 bg-black/20 z-0"></div>
+
+        <!-- Elemento decorativo amarillo lateral FUNCIONA -->
+        <div class="absolute right-0 top-0 w-24 h-full z-50">
             <button
                 class="w-full h-full hover:scale-105 transition-transform duration-300"
+                id="mobileMenuButton"
             >
                 <img
                     src="/services-icon/slide-services.png"
                     alt="Barra lateral"
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-cover shadow-2xl"
                 />
             </button>
         </div>
@@ -31,83 +35,112 @@ import MobileMenu from "../components/MobileMenu.astro";
         <!-- Contenido principal -->
         <main class="relative z-10 h-full flex flex-col">
             <div class="flex items-center ml-6 mt-12">
-                <a href="index.astro" class="flex items-center">
+                <a href="/" class="flex items-center logo-hover">
                     <img
                         src="/logo.png"
                         alt="AYUUJK Logo"
-                        class="w-16 h-16 object-contain"
+                        class="w-16 h-16 object-contain drop-shadow-lg"
                     />
                 </a>
             </div>
 
             <!-- Sección NOSOTROS -->
-            <div class="px-8 pb-12 text-center space-y-6">
-                <h2
-                    class="text-4xl font-bold text-yellow-400 mb-6 tracking-wider"
-                >
+            <div class="px-8 pb-12 text-center space-y-8 mt-6">
+                <h2 class="text-4xl font-bold text-yellow-400 mb-8 tracking-wider nosotros-title">
                     NOSOTROS
                 </h2>
 
                 <!-- Texto principal -->
-                <p class="text-lg text-gray-200 leading-relaxed">
-                    <span
-                        class="block font-extrabold text-2xl text-yellow-400 mb-2"
-                        >YUUJK TAXI</span
-                    >
-                    Tu mejor opción en <span class="font-semibold"
-                        >Los Ángeles</span
-                    >.
-                </p>
-
-                <p class="text-gray-300 leading-relaxed">
-                    Somos un grupo de taxistas mexicanos en constante
-                    crecimiento, ofreciendo traslados rápidos, económicos y
-                    seguros en Los Ángeles, CA.
-                </p>
-
-                <!-- Lista de ventajas -->
-                <ul class="text-left inline-block text-gray-200 space-y-2">
-                    <li>
-                        🚕 <span class="font-semibold"
-                            >Confianza y puntualidad</span
-                        > en cada viaje.
-                    </li>
-                    <li>
-                        📦 <span class="font-semibold"
-                            >Servicio de delivery y mudanzas</span
-                        >, para tu comodidad.
-                    </li>
-                    <li>
-                        👥 <span class="font-semibold">Atención cercana</span> y
-                        siempre disponible.
-                    </li>
-                </ul>
-
-                <!-- Contacto -->
-                <div class="space-y-1 mt-4">
-                    <p class="text-gray-200">
-                        <span class="font-semibold">📱 Llámanos:</span> 323-374-8922
+                <div class="space-y-4">
+                    <p class="text-lg text-gray-200 leading-relaxed">
+                        <span class="block font-extrabold text-2xl text-yellow-400 mb-2 company-name">
+                            AYUUJK TAXI
+                        </span>
+                        Tu mejor opción en <span class="font-semibold text-yellow-300">Los Ángeles</span>.
                     </p>
-                    <p class="text-gray-200">
-                        <span class="font-semibold">📱 WhatsApp:</span> 323-901-0216
+
+                    <p class="text-gray-300 leading-relaxed description-text">
+                        Somos un grupo de taxistas mexicanos en constante
+                        crecimiento, ofreciendo traslados rápidos, económicos y
+                        seguros en Los Ángeles, CA.
                     </p>
                 </div>
 
+                <!-- Lista de ventajas con iconos personalizados -->
+                <div class="space-y-4 mt-8">
+                    <div class="service-item flex items-center text-left bg-black/40 rounded-xl p-4 hover:bg-yellow-400/20 transition-all duration-300">
+                        <div class="icon-container w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                            <img src="/about-icons/taxi-about.png" alt="Taxi" class="w-6 h-6 object-contain" />
+                        </div>
+                        <div>
+                            <span class="font-semibold text-white service-title">Confianza y puntualidad</span>
+                            <p class="text-sm text-gray-300">en cada viaje</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item flex items-center text-left bg-black/40 rounded-xl p-4 hover:bg-yellow-400/20 transition-all duration-300">
+                        <div class="icon-container w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                            <img src="/about-icons/delivery-about.png" alt="Delivery" class="w-6 h-6 object-contain" />
+                        </div>
+                        <div>
+                            <span class="font-semibold text-white service-title">Servicio de delivery y mudanzas</span>
+                            <p class="text-sm text-gray-300">para tu comodidad</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item flex items-center text-left bg-black/40 rounded-xl p-4 hover:bg-yellow-400/20 transition-all duration-300">
+                        <div class="icon-container w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                            <img src="/about-icons/customer-service-icon.png" alt="Atención" class="w-6 h-6 object-contain" />
+                        </div>
+                        <div>
+                            <span class="font-semibold text-white service-title">Atención cercana</span>
+                            <p class="text-sm text-gray-300">y siempre disponible</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacto con iconos -->
+                <div class="space-y-4 mt-8">
+                    <div class="contact-item flex items-center justify-center bg-black/40 rounded-xl p-4 hover:bg-green-400/10 transition-all duration-300">
+                        <div class="icon-container w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                            <img src="/about-icons/phone-icon.png" alt="Teléfono" class="w-5 h-5 object-contain" />
+                        </div>
+                        <div class="text-left">
+                            <span class="font-semibold text-white contact-label"> Llámanos:</span>
+                            <p class="text-yellow-300 font-bold text-lg">323-374-8922</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item flex items-center justify-center bg-black/40 rounded-xl p-4 hover:bg-green-400/10 transition-all duration-300">
+                        <div class="icon-container w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                            <img src="/about-icons/whatsapp.png" alt="WhatsApp" class="w-5 h-5 object-contain" />
+                        </div>
+                        <div class="text-left">
+                            <span class="font-semibold text-white contact-label">WhatsApp:</span>
+                            <p class="text-yellow-300 font-bold text-lg">323-901-0216</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Frase final -->
-                <p class="italic text-yellow-300 font-semibold text-lg mt-6">
-                    “Más que un traslado, somos tu aliado en el camino”.
-                </p>
+                <div class="quote-container bg-gradient-to-r from-yellow-400/30 to-yellow-600/30 rounded-2xl p-6 mt-8 border border-yellow-400/40">
+                    <p class="italic text-yellow-300 font-semibold text-lg quote-text">
+                        "Más que un traslado, somos tu aliado en el camino"
+                    </p>
+                </div>
             </div>
 
-            <!-- Indicador inferior -->
-            <div class="flex justify-center pb-4">
-                <div class="w-32 h-1 bg-white/30 rounded-full"></div>
+            <!-- Indicador inferior mejorado -->
+            <div class="flex justify-center pb-6 mt-auto">
+                <div class="w-32 h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full opacity-80 shadow-lg"></div>
             </div>
         </main>
     </div>
 </Layout>
 
 <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;600;700&display=swap');
+    
     :root {
         --font-oswald: "Oswald", sans-serif;
         --font-poppins: "Poppins", sans-serif;
@@ -122,18 +155,149 @@ import MobileMenu from "../components/MobileMenu.astro";
         overflow-x: hidden;
     }
 
-    h1,
-    h2 {
+    h1, h2 {
         font-family: var(--font-oswald);
     }
 
-    h1 {
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-        letter-spacing: 0.1em;
+    /* Sombras negras en títulos */
+    .nosotros-title {
+        text-shadow: 
+            3px 3px 0px rgba(0,0,0,1),
+            6px 6px 12px rgba(0,0,0,0.8),
+            0 0 20px rgba(255,193,7,0.6);
+        animation: glow-pulse 3s infinite alternate;
     }
 
-    h2 {
-        text-shadow: 0 2px 10px rgba(255, 193, 7, 0.5);
+    .company-name {
+        text-shadow: 
+            2px 2px 0px rgba(0,0,0,1),
+            4px 4px 8px rgba(0,0,0,0.8),
+            0 0 15px rgba(255,193,7,0.5);
+    }
+
+    .description-text {
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .service-title {
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
+
+    .contact-label {
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
+
+    .quote-text {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    /* Efectos de hover y animaciones */
+    .logo-hover {
+        transition: all 0.3s ease;
+    }
+
+    .logo-hover:hover {
+        transform: scale(1.1) rotate(5deg);
+        filter: drop-shadow(0 0 20px rgba(255,193,7,0.6));
+    }
+
+    .service-item {
+        transform: translateX(-30px);
+        opacity: 0;
+        animation: slideInLeft 0.8s ease forwards;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,193,7,0.2);
+    }
+
+    .service-item:nth-child(1) { animation-delay: 0.2s; }
+    .service-item:nth-child(2) { animation-delay: 0.4s; }
+    .service-item:nth-child(3) { animation-delay: 0.6s; }
+
+    .service-item:hover {
+        transform: translateX(10px) scale(1.03);
+        box-shadow: 0 10px 30px rgba(255,193,7,0.4);
+    }
+
+    .contact-item {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(34,197,94,0.3);
+    }
+
+    .contact-item:nth-child(1) { animation-delay: 0.8s; }
+    .contact-item:nth-child(2) { animation-delay: 1s; }
+
+    .contact-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 25px rgba(34,197,94,0.3);
+    }
+
+    .quote-container {
+        opacity: 0;
+        animation: fadeInScale 1s ease forwards;
+        animation-delay: 1.2s;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 8px 32px rgba(255,193,7,0.2);
+    }
+
+    .icon-container {
+        transition: all 0.3s ease;
+    }
+
+    .service-item:hover .icon-container {
+        transform: scale(1.15) rotate(10deg);
+        box-shadow: 0 8px 25px rgba(255,193,7,0.5);
+    }
+
+    .contact-item:hover .icon-container {
+        transform: scale(1.15) rotate(-10deg);
+        box-shadow: 0 6px 20px rgba(34,197,94,0.5);
+    }
+
+    /* Animaciones */
+    @keyframes glow-pulse {
+        0% { 
+            text-shadow: 
+                3px 3px 0px rgba(0,0,0,1),
+                6px 6px 12px rgba(0,0,0,0.8),
+                0 0 20px rgba(255,193,7,0.6);
+        }
+        100% { 
+            text-shadow: 
+                3px 3px 0px rgba(0,0,0,1),
+                6px 6px 12px rgba(0,0,0,0.8),
+                0 0 35px rgba(255,193,7,0.9);
+        }
+    }
+
+    @keyframes slideInLeft {
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInScale {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 
     /* Animación flotante para el taxi */
@@ -143,8 +307,7 @@ import MobileMenu from "../components/MobileMenu.astro";
     }
 
     @keyframes float {
-        0%,
-        100% {
+        0%, 100% {
             transform: translateY(0px) rotate(0deg);
         }
         25% {
@@ -158,36 +321,65 @@ import MobileMenu from "../components/MobileMenu.astro";
         }
     }
 
-    /* Efectos de iluminación para las tarjetas */
-    .hover\:bg-orange-200\/20:hover {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hover\:bg-orange-200\/20:hover::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.1),
-            transparent
-        );
-        transition: left 0.5s;
-    }
-
-    .hover\:bg-orange-200\/20:hover::before {
-        left: 100%;
-    }
-
     /* Estilos responsivos */
     @media (max-width: 430px) {
         .text-4xl {
-            font-size: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .service-item, .contact-item {
+            padding: 0.75rem;
+        }
+        
+        .icon-container {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .quote-container {
+            padding: 1rem;
         }
     }
 </style>
+
+<script is:inline>
+    // Funcionalidad del botón del menú móvil
+    document.getElementById('mobileMenuButton')?.addEventListener('click', () => {
+        const button = document.getElementById('mobileMenuButton');
+        button.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            button.style.transform = 'scale(1)';
+            window.location.href = '/MobileMenu';
+        }, 150);
+    });
+
+    // Efecto parallax sutil para el fondo
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const background = document.querySelector('div[style*="background-image"]');
+        
+        if (background) {
+            background.style.backgroundPosition = `center ${scrolled * 0.2}px`;
+        }
+    });
+
+    // Efecto de typing para la frase final
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const quoteText = document.querySelector('.quote-text');
+            if (quoteText) {
+                const originalText = quoteText.textContent;
+                quoteText.textContent = '';
+                let i = 0;
+                const typeWriter = () => {
+                    if (i < originalText.length) {
+                        quoteText.textContent += originalText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50);
+                    }
+                };
+                typeWriter();
+            }
+        }, 1500);
+    });
+</script>

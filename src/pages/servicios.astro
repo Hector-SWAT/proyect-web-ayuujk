@@ -4,233 +4,127 @@ import Layout from "../layouts/Layout.astro";
 import MobileMenu from "../components/MobileMenu.astro";
 ---
 
-<!-- /* =========================================================
-   Proyecto desarrollado con Astro + TailwindCSS + Node.js
-   Autores: Hector-SWAT & Luis
-   Año: 2025
-   DIMENSIONS 430x932 - MOBILE OPTIMIZED
-========================================================= */ -->
-
-
 <Layout title="AYUUJK - Servicios de Taxi en Los Angeles">
+
+    <!-- Fondo responsivo -->
     <div
-        class="min-h-screen bg-cover bg-center bg-no-repeat relative"
-        style="background-image: url('/services-icon/Fondo-services.png');"
-    >
-        <!-- Elemento decorativo amarillo latera FUNCIONA -->
-        <div class="absolute right-0 top-0 w-24 h-full">
-            <button
-                class="w-full h-full hover:scale-105 transition-transform duration-300"
-            >
-                <img
-                    src="/services-icon/slide-services.png"
-                    alt="Barra lateral"
-                    class="w-full h-full object-cover"
-                />
-            </button>
-        </div>
- 
-        <!-- Contenido principal -->
-        <main class="relative z-10 h-full flex flex-col">
-            <div class="flex items-center ml-6 mt-12">
-                <a href="index.astro" class="flex items-center">
-                    <img
-                        src="/logo.png"
-                        alt="AYUUJK Logo"
-                        class="w-16 h-16 object-contain"
-                    />
-                </a>
-            </div>
-            
-            <!-- Título principal centrado -->
-    <div class="text-center mt-8 mb-8 relative">
-        <h1
-            class="text-4xl font-Oswald font-semibold mb-4 tracking-wider relative inline-block"
-            style="color: #FFFFFF;"
+        id="bg-fondo"
+        class="absolute inset-0 w-full min-h-screen bg-bottom bg-cover bg-no-repeat -z-10"
+        style="background-image: url('/services-icon/fondo-se.png');"
+    ></div>
+    
+    <!-- Barra lateral -->
+    <div class="absolute right-0 top-0 w-20 sm:w-24 h-full z-20">
+        <button
+            id="mobileMenuButton"
+            class="w-full h-full hover:scale-105 transition-transform duration-300"
         >
-            AYUUJK
-            <!-- Punto amarillo mejorado -->
-            <span class="absolute -top-2 -right-4 w-3 h-3">
-                <!-- Círculo sólido principal -->
-                <span class="absolute inset-0 w-3 h-3 bg-yellow-400 rounded-full"></span>
-                <!-- Efecto de brillo sutil -->
-                <span class="absolute inset-0 w-3 h-3 bg-yellow-300 rounded-full animate-ping opacity-30"></span>
-            </span>
-        </h1>
+            <img
+                src="/services-icon/slide-services.png"
+                alt="Barra lateral"
+                class="w-full h-full object-cover"
+            />
+        </button>
     </div>
 
-            
-           
+    <!-- Contenido principal -->
+    <main class="relative z-30 flex flex-col min-h-screen max-w-[430px] mx-auto">
+        
+        <!-- Logo / bolita amarilla -->
+        <div class="relative w-full flex justify-center">
+            <div
+                class="w-3 h-3 bg-yellow-400 rounded-full absolute"
+                style="top: 130px; left: 300px; box-shadow: 0 0 8px 4px rgba(255, 200, 0, 0.6);"
+            ></div>
+        </div>
 
-  
-            <!-- Imagen del taxi con efecto 3D -->
-            <div class="flex-1 flex items-center justify-center px-6 mb-8">
-                <div class="relative">
-                    <!-- Sombra del taxi -->
-                    <div
-                        class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-64 h-8 bg-black/30 rounded-full blur-lg"
-                    >
-                    </div>
-                    <!-- Taxi principal -->
-                    <img
-                        src="/services-icon/taxi-services.png"
-                        alt="Taxi AYUUJK"
-                        class="w-80 h-auto object-contain floating-taxi"
-                    />
-                </div>
+        <!-- Título -->
+        <div class="text-center mb-12 pt-36">
+            <h1 class="text-4xl font-Oswald font-semibold mb-4 tracking-wider text-white">
+                AYUUJK
+            </h1>
+        </div>
+
+        <!-- Taxi con sombra -->
+        <div class="flex-1 flex items-center justify-center px-6 mb-8">
+            <div class="relative">
+                <div
+                    class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-64 h-8 bg-black/30 rounded-full blur-lg"
+                ></div>
+                <img
+                    src="/services-icon/taxi-services.png"
+                    alt="Taxi AYUUJK"
+                    class="w-80 h-auto object-contain floating-taxi"
+                />
             </div>
+        </div>
 
-            <!-- Sección de servicios -->
-            <div class="px-10 pb-12">
-                <!-- Título de servicios -->
-                <h2
-                    class="text-4xl font-bold text-yellow-400 mb-6 tracking-wider"
-                >
-                    SERVICIOS
-                </h2>
+        <!-- Subtítulos -->
+        <div class="text-center mb-3 pt-2">
+            <h2 class="text-3xl font-Poppins font-bold tracking-wide glowing-text-shadow mb-1 text-amber-500">
+                SERVICIOS DE TAXI
+            </h2>
+            <h2 class="text-3xl font-poppins font-bold tracking-wide glowing-text-shadow text-amber-500">
+                EN LOS ANGELES
+            </h2>
+        </div>
 
-                <!-- Lista de servicios -->
-                <div class="space-y-4">
-                    <!-- Servicio 24/7 -->
-                    <div class="flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-orange-200/20">
-                        <div class="flex items-center justify-center w-12 h-12">
-                            <img
-                                src="/services-icon/24hr-icon.png"
-                                alt="24/7"
-                                class="w-8 h-8"
-                            />
-                        </div>
-                        <span class="text-white font-semibold text-lg">Servicio 24/7</span>
-                    </div>
+        <!-- Servicios -->
+        <div class="px-6 sm:px-10 pb-12 w-full">
+            <div class="space-y-5">
+                <!-- Servicio 24/7 -->
+                <div class="flex items-center gap-4 text-shadow-white service-item">
+                    <img src="/services-icon/24hr-icon.png" alt="24/7" class="w-8 h-8 service-icon" />
+                    <span class="text-white font-semibold text-base sm:text-lg service-text">Servicio 24/7</span>
+                </div>
 
-                    <!-- Transferencias -->
-                    <div class="flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-orange-200/20">
-                        <div class="flex items-center justify-center w-12 h-12">
-                            <img
-                                src="/services-icon/taximini-icon.png"
-                                alt="Transferencias"
-                                class="w-8 h-8"
-                            />
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-white font-semibold text-lg">Transferencias</span>
-                            <span class="text-gray-300 text-sm">Urbanas</span>
-                        </div>
-                    </div>
-
-                    <!-- Aeropuerto -->
-                    <div class="flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-orange-200/20">
-                        <div class="flex items-center justify-center w-12 h-12">
-                            <img
-                                src="/services-icon/avion-icon.png"
-                                alt="Aeropuerto"
-                                class="w-8 h-8"
-                            />
-                        </div>
-                        <span class="text-white font-semibold text-lg">Viajes al aeropuerto</span>
-                    </div>
-
-                    <!-- Delivery -->
-                    <div class="flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-orange-200/20">
-                        <div class="flex items-center justify-center w-12 h-12">
-                            <img
-                                src="/services-icon/delivery-icon.png"
-                                alt="Delivery"
-                                class="w-8 h-8"
-                            />
-                        </div>
-                        <span class="text-white font-semibold text-lg">Servicio de Entrega</span>
+                <!-- Transferencias -->
+                <div class="flex items-center gap-4 text-shadow-white service-item">
+                    <img src="/services-icon/taximini-icon.png" alt="Transferencias" class="w-8 h-8 service-icon" />
+                    <div class="flex flex-col">
+                        <span class="text-white font-semibold text-base sm:text-lg service-text">Transferencias</span>
+                        <span class="text-gray-300 text-sm text-shadow-dark service-subtext">Urbanas</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Indicador inferior -->
-            <div class="flex justify-center pb-4">
-                <div class="w-32 h-1 bg-white/30 rounded-full"></div>
+                <!-- Aeropuerto -->
+                <div class="flex items-center gap-4 text-shadow-white service-item">
+                    <img src="/services-icon/avion-icon.png" alt="Aeropuerto" class="w-8 h-8 service-icon" />
+                    <span class="text-white font-semibold text-base sm:text-lg service-text">Viajes al aeropuerto</span>
+                </div>
+
+                <!-- Delivery -->
+                <div class="flex items-center gap-4 text-shadow-white service-item">
+                    <img src="/services-icon/delivery-icon.png" alt="Delivery" class="w-8 h-8 service-icon" />
+                    <span class="text-white font-semibold text-base sm:text-lg service-text">Servicio de Entrega</span>
+                </div>
             </div>
-        </main>
-    </div>
+        </div>
+
+        <!-- Indicador inferior -->
+        <div class="flex justify-center pb-4">
+            <div class="w-32 h-1 bg-white/30 rounded-full"></div>
+        </div>
+    </main>
 </Layout>
 
-<style is:global>
-    :root {
-        --font-oswald: 'Oswald', sans-serif;
-        --font-poppins: 'Poppins', sans-serif;
-    }
+<script is:inline>
+    // Menú móvil
+    document.getElementById("mobileMenuButton")?.addEventListener("click", () => {
+        const button = document.getElementById("mobileMenuButton");
+        button.style.transform = "scale(0.95)";
+        setTimeout(() => {
+            button.style.transform = "scale(1)";
+            window.location.href = "/MobileMenu";
+        }, 150);
+    });
 
-    body {
-        font-family: var(--font-poppins);
-        background-color: #111827;
-        color: white;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    h1, h2 {
-        font-family: var(--font-oswald);
-    }
-
-    h1 {
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-        letter-spacing: 0.1em;
-    }
-
-    h2 {
-        text-shadow: 0 2px 10px rgba(255, 193, 7, 0.5);
-    }
-
-    /* Animación flotante para el taxi */
-    .floating-taxi {
-        animation: float 6s ease-in-out infinite;
-        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0px) rotate(0deg);
+    // Parallax del fondo
+    window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const background = document.getElementById("bg-fondo");
+        if (background) {
+            background.style.backgroundPosition = `center ${scrolled * 0.2}px`;
         }
-        25% {
-            transform: translateY(-10px) rotate(1deg);
-        }
-        50% {
-            transform: translateY(-5px) rotate(0deg);
-        }
-        75% {
-            transform: translateY(-15px) rotate(-1deg);
-        }
-    }
-
-    /* Efectos de iluminación para las tarjetas */
-    .hover\:bg-orange-200\/20:hover {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hover\:bg-orange-200\/20:hover::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.1),
-            transparent
-        );
-        transition: left 0.5s;
-    }
-
-    .hover\:bg-orange-200\/20:hover::before {
-        left: 100%;
-    }
-
-    /* Estilos responsivos */
-    @media (max-width: 430px) {
-        .text-4xl {
-            font-size: 2rem;
-        }
-    }
-</style>
+    });
+</script>

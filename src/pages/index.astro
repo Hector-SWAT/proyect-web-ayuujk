@@ -3,20 +3,21 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 ---
+
 <!-- /* =========================================================
    Proyecto desarrollado con Astro + TailwindCSS + Node.js
    Autores: Hector-SWAT & Luis
    Año: 2025
 ========================================================= */ -->
-
 <Layout title="AYUUJK - Taxi Service in Los Angeles">
 	<Header />
-	
+
 	<!-- Contenido principal con imagen de fondo - ESTRUCTURA CORREGIDA -->
 	<div
 		class="min-h-screen bg-cover bg-center bg-no-repeat relative"
 		style="background-image: url('/background.png');"
 	>
+	
 		<!-- Overlay opcional para mejor legibilidad del texto -->
 		<div class="absolute inset-0 bg-black bg-opacity-10"></div>
 
@@ -84,7 +85,11 @@ import Header from "../components/Header.astro";
 						href="https://www.tiktok.com/@taxi.ayuujk?_t=ZM-8yuaP5Ik8RB&_r=1"
 						class="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
 					>
-						<img src="/icons/tiktok.png" alt="TikTok" class="w-8 h-8" />
+						<img
+							src="/icons/tiktok.png"
+							alt="TikTok"
+							class="w-8 h-8"
+						/>
 					</a>
 
 					<!-- WhatsApp Icon -->
@@ -127,7 +132,7 @@ import Header from "../components/Header.astro";
 <style>
 	/* Efecto brillante para el texto con sombras negras difuminadas */
 	.glowing-text-shadow {
-		text-shadow: 
+		text-shadow:
 			3px 3px 8px rgba(0, 0, 0, 0.8),
 			6px 6px 15px rgba(0, 0, 0, 0.6),
 			9px 9px 25px rgba(0, 0, 0, 0.4),
@@ -141,7 +146,7 @@ import Header from "../components/Header.astro";
 	@keyframes textGlowShadow {
 		0%,
 		100% {
-			text-shadow: 
+			text-shadow:
 				3px 3px 8px rgba(0, 0, 0, 0.8),
 				6px 6px 15px rgba(0, 0, 0, 0.6),
 				9px 9px 25px rgba(0, 0, 0, 0.4),
@@ -150,7 +155,7 @@ import Header from "../components/Header.astro";
 				0 0 30px rgba(255, 188, 7, 0.2);
 		}
 		50% {
-			text-shadow: 
+			text-shadow:
 				4px 4px 12px rgba(0, 0, 0, 0.9),
 				8px 8px 20px rgba(0, 0, 0, 0.7),
 				12px 12px 35px rgba(0, 0, 0, 0.5),
