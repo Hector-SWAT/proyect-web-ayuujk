@@ -2,28 +2,28 @@
 // src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Contacto from "../components/contacto.astro";
+import Nosotros from "./nosotros.astro";
+import Seguridad from "./seguridad.astro";
+import Servicios from "./servicios.astro";
+import Comments from "./comments.astro";
 ---
 
-<!-- /* =========================================================
-   Proyecto desarrollado con Astro + TailwindCSS + Node.js
-   Autores: Hector-SWAT & Luis
-   Año: 2025
-========================================================= */ -->
 <Layout title="AYUUJK - Taxi Service in Los Angeles">
+	<!-- Header ya no necesita clase fixed aquí porque está en el componente -->
 	<Header />
 
-	<!-- Contenido principal con imagen de fondo - ESTRUCTURA CORREGIDA -->
+	<!-- Contenido principal con imagen de fondo -->
 	<div
-		class="min-h-screen bg-cover bg-center bg-no-repeat relative"
+		class="min-h-screen bg-cover bg-center bg-no-repeat relative pt-16"
 		style="background-image: url('/background.png');"
 	>
-	
 		<!-- Overlay opcional para mejor legibilidad del texto -->
 		<div class="absolute inset-0 bg-black bg-opacity-10"></div>
 
-		<!-- Contenido principal - UN SOLO MAIN CON ESPACIADO ORIGINAL -->
+		<!-- Contenido principal -->
 		<main class="flex flex-col items-center px-6 min-h-screen relative">
-			<!-- SECCIÓN SUPERIOR (equivale al primer main original) -->
+			<!-- SECCIÓN SUPERIOR -->
 			<div class="w-full flex justify-center">
 				<div
 					class="w-3 h-3 bg-yellow-400 rounded-full absolute"
@@ -32,10 +32,10 @@ import Header from "../components/Header.astro";
 				</div>
 			</div>
 
-			<!-- SECCIÓN PRINCIPAL (equivale al segundo main con pt-36) -->
-			<div class="flex flex-col items-center px-6 pt-36">
+			<!-- SECCIÓN PRINCIPAL -->
+			<div class="flex flex-col items-center px-6 pt-28"> <!-- Ajustado pt-36 a pt-28 -->
 				<!-- Título principal -->
-				<div class="text-center mb-12">
+				<div class="text-center mb-8 md:mb-12"> <!-- Añadido responsividad -->
 					<h1
 						class="text-4xl font-Oswald font-semibold mb-4 tracking-wider"
 						style="color: #FFFFFF;"
@@ -43,13 +43,13 @@ import Header from "../components/Header.astro";
 						AYUUJK
 					</h1>
 					<h2
-						class="text-3xl font-Popins font-bold tracking-wide glowing-text-shadow mb-1"
+						class="text-2xl md:text-3xl font-Popins font-bold tracking-wide glowing-text-shadow mb-1" 
 						style="color: #FFA500;"
 					>
 						TAXI SERVICE IN
 					</h2>
 					<h2
-						class="text-3xl font-poppins font-bold tracking-wide glowing-text-shadow"
+						class="text-2xl md:text-3xl font-poppins font-bold tracking-wide glowing-text-shadow"
 						style="color: #FFA500;"
 					>
 						LOS ANGELES
@@ -57,38 +57,38 @@ import Header from "../components/Header.astro";
 				</div>
 
 				<!-- Imagen del taxi -->
-				<div class="relative mb-12">
+				<div class="relative mb-8 md:mb-12"> <!-- Añadido responsividad -->
 					<img
 						src="/taxi.png"
 						alt="Taxi AYUUJK"
-						class="w-150 h-80 object-contain"
+					    class="w-64 md:w-96 lg:w-64 xl:w-80 h-auto object-contain" 
 					/>
 				</div>
-
+				
 				<!-- Botón de reserva -->
-				<button
-					class="glowing-button bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 mb-12 relative z-10"
+				<a
+					href="#contacto"
+					class="glowing-button bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-3 px-8 md:py-4 md:px-10 rounded-xl text-lg transition-all duration-300 mb-8 md:mb-12 relative z-10"
 				>
 					RESERVA TU TAXI
-					<!-- Flecha PNG -->
 					<img
 						src="/icons/flecha.png"
 						alt="flecha"
-						class="absolute -bottom-1 -right-1 w-8 h-8"
+						class="absolute -bottom-1 -right-1 w-6 h-6 md:w-8 md:h-8" 
 					/>
-				</button>
+				</a>
 
 				<!-- Iconos de redes sociales -->
-				<div class="flex space-x-6 mb-8">
+				<div class="flex space-x-4 md:space-x-6 mb-8"> <!-- Añadido responsividad -->
 					<!-- TikTok Icon -->
 					<a
 						href="https://www.tiktok.com/@taxi.ayuujk?_t=ZM-8yuaP5Ik8RB&_r=1"
-						class="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
+						class="w-18 h-18 md:w-14 md:h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors" 
 					>
 						<img
 							src="/icons/tiktok.png"
 							alt="TikTok"
-							class="w-8 h-8"
+							class="w-10 h-10 md:w-8 md:h-8" 
 						/>
 					</a>
 
@@ -96,24 +96,24 @@ import Header from "../components/Header.astro";
 					<a
 						href="https://wa.me/50379109103?text=Hola%2C%20Tiene%20pan.%20xd"
 						target="_blank"
-						class="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
+						class="w-18 h-18 md:w-14 md:h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors" 
 					>
 						<img
 							src="/icons/whatsapp.png"
 							alt="WhatsApp"
-							class="w-8 h-8"
+							class="w-10 h-10 md:w-8 md:h-8" 
 						/>
 					</a>
 
 					<!-- Facebook Icon -->
 					<a
 						href="https://www.facebook.com/taxi.ayuujk.tlahui?rdid=yBFGZViq58lE2mNs&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AfGgjx281%2F"
-						class="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
+						class="w-18 h-18 md:w-14 md:h-14 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors" 
 					>
 						<img
 							src="/icons/facebook.png"
 							alt="Facebook"
-							class="w-8 h-8"
+							class="w-10 h-10 md:w-8 md:h-8" 
 						/>
 					</a>
 				</div>
@@ -126,11 +126,17 @@ import Header from "../components/Header.astro";
 			</div>
 		</main>
 	</div>
+
+	<Servicios id="servicios" />
+	<Comments id="comentarios" />
+	<Seguridad id="seguridad" />
+	<Nosotros id="nosotros" />
+	<Contacto id="contacto" />
 </Layout>
 
-<!-- ESTILOS CSS COMPLETOS -->
+<!-- ESTILOS CSS COMPLETOS (se mantienen igual) -->
 <style>
-	/* Efecto brillante para el texto con sombras negras difuminadas */
+	/* Tus estilos CSS existentes se mantienen igual */
 	.glowing-text-shadow {
 		text-shadow:
 			3px 3px 8px rgba(0, 0, 0, 0.8),
@@ -142,7 +148,6 @@ import Header from "../components/Header.astro";
 		animation: textGlowShadow 2s ease-in-out infinite;
 	}
 
-	/* Animación para el texto brillante con sombras */
 	@keyframes textGlowShadow {
 		0%,
 		100% {
@@ -165,7 +170,6 @@ import Header from "../components/Header.astro";
 		}
 	}
 
-	/* Animación de parpadeo/brillo dorado para el botón */
 	@keyframes goldGlow {
 		0%,
 		100% {
@@ -186,7 +190,6 @@ import Header from "../components/Header.astro";
 		}
 	}
 
-	/* Clase personalizada para el botón brillante */
 	.glowing-button {
 		animation: goldGlow 2s ease-in-out infinite;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -194,7 +197,6 @@ import Header from "../components/Header.astro";
 		overflow: hidden;
 	}
 
-	/* Efecto de brillo que se mueve por el botón */
 	.glowing-button::before {
 		content: "";
 		position: absolute;
@@ -215,7 +217,6 @@ import Header from "../components/Header.astro";
 		left: 100%;
 	}
 
-	/* Hover effect más intenso para el botón */
 	.glowing-button:hover {
 		animation-duration: 1s;
 		box-shadow:
@@ -226,7 +227,6 @@ import Header from "../components/Header.astro";
 		transform: scale(1.1);
 	}
 
-	/* Estilos para LETRAS DE TAXI IN LOS ANGELES*/
 	.glowing-text-shadow {
 		text-shadow: 0 0 8px #ffa500;
 		font-variant-ligatures: common-ligatures;

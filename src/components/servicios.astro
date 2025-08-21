@@ -3,20 +3,21 @@
 import Layout from "../layouts/Layout.astro";
 import MobileMenu from "../components/MobileMenu.astro";
 ---
-
 <!-- /* =========================================================
    Proyecto desarrollado con Astro + TailwindCSS + Node.js
    Autores: Hector-SWAT & Luis
    Año: 2025
    DIMENSIONS 430x932 - MOBILE OPTIMIZED
 ========================================================= */ -->
+
 <section id="servicios">
-    <!-- contenido servicios -->
+  <!-- contenido servicios -->
 </section>
+
 
 <Layout title="AYUUJK - Servicios de Taxi en Los Angeles">
     
-    <!-- Contenedor principal con fondo específico -->
+     <!-- Contenedor principal con fondo específico -->
     <div
         class="min-h-screen bg-cover bg-center bg-no-repeat relative"
         style="background-image: url('/backgrounds/fondo-day1.png');"
@@ -32,28 +33,24 @@ import MobileMenu from "../components/MobileMenu.astro";
             class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-900 to-transparent z-10"
         >
         </div> 
-
+        
         <!-- Overlay para mejor contraste -->
         <div class="absolute inset-0 bg-black bg-opacity-80"></div>
 
         <!-- Contenido principal -->
-        <main
-            class="relative z-30 flex flex-col min-h-screen max-w-[430px] mx-auto"
-        >
+        <main class="relative z-30 flex flex-col min-h-screen max-w-[430px] mx-auto">
+            
             <!-- Logo / bolita amarilla -->
             <div class="relative w-full flex justify-center">
                 <div
                     class="w-3 h-3 bg-yellow-400 rounded-full absolute"
                     style="top: 130px; left: 300px; box-shadow: 0 0 8px 4px rgba(255, 200, 0, 0.6);"
-                >
-                </div>
+                ></div>
             </div>
 
             <!-- Título -->
             <div class="text-center mb-12 pt-36">
-                <h1
-                    class="text-4xl font-Oswald font-semibold mb-4 tracking-wider text-white"
-                >
+                <h1 class="text-4xl font-Oswald font-semibold mb-4 tracking-wider text-white">
                     AYUUJK
                 </h1>
             </div>
@@ -63,8 +60,7 @@ import MobileMenu from "../components/MobileMenu.astro";
                 <div class="relative">
                     <div
                         class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-64 h-8 bg-black/30 rounded-full blur-lg"
-                    >
-                    </div>
+                    ></div>
                     <img
                         src="/services-icon/taxi-services.png"
                         alt="Taxi AYUUJK"
@@ -75,14 +71,10 @@ import MobileMenu from "../components/MobileMenu.astro";
 
             <!-- Subtítulos -->
             <div class="text-center mb-3 pt-2">
-                <h2
-                    class="text-3xl font-Poppins font-bold tracking-wide glowing-text-shadow mb-1 text-amber-500"
-                >
+                <h2 class="text-3xl font-Poppins font-bold tracking-wide glowing-text-shadow mb-1 text-amber-500">
                     SERVICIOS DE TAXI
                 </h2>
-                <h2
-                    class="text-3xl font-poppins font-bold tracking-wide glowing-text-shadow text-amber-500"
-                >
+                <h2 class="text-3xl font-poppins font-bold tracking-wide glowing-text-shadow text-amber-500">
                     EN LOS ANGELES
                 </h2>
             </div>
@@ -91,69 +83,30 @@ import MobileMenu from "../components/MobileMenu.astro";
             <div class="px-6 sm:px-10 pb-12 w-full">
                 <div class="space-y-5">
                     <!-- Servicio 24/7 -->
-                    <div
-                        class="flex items-center gap-4 text-shadow-white service-item"
-                    >
-                        <img
-                            src="/services-icon/24hr-icon.png"
-                            alt="24/7"
-                            class="w-8 h-8 service-icon"
-                        />
-                        <span
-                            class="text-white font-semibold text-base sm:text-lg service-text"
-                            >Servicio 24/7</span
-                        >
+                    <div class="flex items-center gap-4 text-shadow-white service-item">
+                        <img src="/services-icon/24hr-icon.png" alt="24/7" class="w-8 h-8 service-icon" />
+                        <span class="text-white font-semibold text-base sm:text-lg service-text">Servicio 24/7</span>
                     </div>
 
                     <!-- Transferencias -->
-                    <div
-                        class="flex items-center gap-4 text-shadow-white service-item"
-                    >
-                        <img
-                            src="/services-icon/taximini-icon.png"
-                            alt="Transferencias"
-                            class="w-8 h-8 service-icon"
-                        />
+                    <div class="flex items-center gap-4 text-shadow-white service-item">
+                        <img src="/services-icon/taximini-icon.png" alt="Transferencias" class="w-8 h-8 service-icon" />
                         <div class="flex flex-col">
-                            <span
-                                class="text-white font-semibold text-base sm:text-lg service-text"
-                                >Transferencias</span
-                            >
-                            <span
-                                class="text-gray-300 text-sm text-shadow-dark service-subtext"
-                                >Urbanas</span
-                            >
+                            <span class="text-white font-semibold text-base sm:text-lg service-text">Transferencias</span>
+                            <span class="text-gray-300 text-sm text-shadow-dark service-subtext">Urbanas</span>
                         </div>
                     </div>
 
                     <!-- Aeropuerto -->
-                    <div
-                        class="flex items-center gap-4 text-shadow-white service-item"
-                    >
-                        <img
-                            src="/services-icon/avion-icon.png"
-                            alt="Aeropuerto"
-                            class="w-8 h-8 service-icon"
-                        />
-                        <span
-                            class="text-white font-semibold text-base sm:text-lg service-text"
-                            >Viajes al aeropuerto</span
-                        >
+                    <div class="flex items-center gap-4 text-shadow-white service-item">
+                        <img src="/services-icon/avion-icon.png" alt="Aeropuerto" class="w-8 h-8 service-icon" />
+                        <span class="text-white font-semibold text-base sm:text-lg service-text">Viajes al aeropuerto</span>
                     </div>
 
                     <!-- Delivery -->
-                    <div
-                        class="flex items-center gap-4 text-shadow-white service-item"
-                    >
-                        <img
-                            src="/services-icon/delivery-icon.png"
-                            alt="Delivery"
-                            class="w-8 h-8 service-icon"
-                        />
-                        <span
-                            class="text-white font-semibold text-base sm:text-lg service-text"
-                            >Servicio de Entrega</span
-                        >
+                    <div class="flex items-center gap-4 text-shadow-white service-item">
+                        <img src="/services-icon/delivery-icon.png" alt="Delivery" class="w-8 h-8 service-icon" />
+                        <span class="text-white font-semibold text-base sm:text-lg service-text">Servicio de Entrega</span>
                     </div>
                 </div>
             </div>
@@ -173,8 +126,7 @@ import MobileMenu from "../components/MobileMenu.astro";
     }
 
     @keyframes float {
-        0%,
-        100% {
+        0%, 100% {
             transform: translateY(0px);
         }
         50% {
@@ -184,7 +136,7 @@ import MobileMenu from "../components/MobileMenu.astro";
 
     /* Efecto brillante para el texto */
     .glowing-text-shadow {
-        text-shadow:
+        text-shadow: 
             2px 2px 4px rgba(0, 0, 0, 0.8),
             0 0 10px rgba(245, 158, 11, 0.6),
             0 0 20px rgba(245, 158, 11, 0.4),
@@ -193,16 +145,15 @@ import MobileMenu from "../components/MobileMenu.astro";
     }
 
     @keyframes textGlow {
-        0%,
-        100% {
-            text-shadow:
+        0%, 100% {
+            text-shadow: 
                 2px 2px 4px rgba(0, 0, 0, 0.8),
                 0 0 10px rgba(245, 158, 11, 0.6),
                 0 0 20px rgba(245, 158, 11, 0.4),
                 0 0 30px rgba(245, 158, 11, 0.2);
         }
         50% {
-            text-shadow:
+            text-shadow: 
                 3px 3px 6px rgba(0, 0, 0, 0.9),
                 0 0 15px rgba(245, 158, 11, 0.8),
                 0 0 25px rgba(245, 158, 11, 0.6),
@@ -226,18 +177,10 @@ import MobileMenu from "../components/MobileMenu.astro";
         transform: translateX(-20px);
     }
 
-    .service-item:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-    .service-item:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-    .service-item:nth-child(3) {
-        animation-delay: 0.3s;
-    }
-    .service-item:nth-child(4) {
-        animation-delay: 0.4s;
-    }
+    .service-item:nth-child(1) { animation-delay: 0.1s; }
+    .service-item:nth-child(2) { animation-delay: 0.2s; }
+    .service-item:nth-child(3) { animation-delay: 0.3s; }
+    .service-item:nth-child(4) { animation-delay: 0.4s; }
 
     @keyframes slideInLeft {
         to {
@@ -266,7 +209,7 @@ import MobileMenu from "../components/MobileMenu.astro";
         .service-item {
             gap: 0.75rem;
         }
-
+        
         .service-icon {
             width: 1.75rem;
             height: 1.75rem;
@@ -276,16 +219,14 @@ import MobileMenu from "../components/MobileMenu.astro";
 
 <script is:inline>
     // Menú móvil
-    document
-        .getElementById("mobileMenuButton")
-        ?.addEventListener("click", () => {
-            const button = document.getElementById("mobileMenuButton");
-            button.style.transform = "scale(0.95)";
-            setTimeout(() => {
-                button.style.transform = "scale(1)";
-                window.location.href = "/MobileMenu";
-            }, 150);
-        });
+    document.getElementById("mobileMenuButton")?.addEventListener("click", () => {
+        const button = document.getElementById("mobileMenuButton");
+        button.style.transform = "scale(0.95)";
+        setTimeout(() => {
+            button.style.transform = "scale(1)";
+            window.location.href = "/MobileMenu";
+        }, 150);
+    });
 
     // Efecto parallax suave solo para esta página
     let ticking = false;

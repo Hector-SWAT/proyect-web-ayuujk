@@ -1,64 +1,136 @@
 ---
 // src/components/MobileMenu.astro
 ---
-
 <!-- /* =========================================================
    Proyecto desarrollado con Astro + TailwindCSS + Node.js
    Autores: Hector-SWAT & Luis
    Año: 2025
 ========================================================= */ -->
 
-<!-- Menu Overlay -->
-<div id="menuOverlay" 
 
+<!-- Menu Overlay -->
+<div id="menuOverlay"
     class="fixed inset-0 bg-slate-900 bg-opacity-100 backdrop-blur-md z-40 opacity-0 invisible transition-all duration-500 ease-in-out shadow-inner"
 >
     <!-- Fondo personalizado -->
-    <div 
+    <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
         style="background-image: url('/fodo-mobile-menu.jpg');"
     ></div>
-
     <!-- Botón cerrar (X) -->
-    <button 
-        id="closeMenu" 
+    <button
+        id="closeMenu"
         class="absolute top-12 right-6 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-yellow-400 text-2xl font-bold shadow-md hover:bg-slate-700 hover:rotate-90 transition-all duration-300"
     >
         ×
     </button>
-
     <!-- Contenido del menú -->
     <div class="relative flex flex-col items-center justify-center min-h-screen space-y-6 px-6 z-10">
-        
-        <!-- Botones de navegación -->
-        <a href="/" 
-           class="w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
+       
+        <!-- Botones de navegación - Ahora van a secciones específicas -->
+        <a href="#inicio"
+           class="menu-link w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
             INICIO
         </a>
-        
-        <a href="/contacto" 
-           class="w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
+       
+        <a href="#contacto"
+           class="menu-link w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
             CONTACTO
         </a>
-        
-        <a href="/servicios" 
-           class="w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
+       
+        <a href="#servicios"
+           class="menu-link w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
             SERVICIOS
         </a>
-        
-        <a href="/comentarios" 
-           class="w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
+       
+        <a href="#comentarios"
+           class="menu-link w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
             COMENTARIOS
         </a>
-        
-        <a href="/seguridad" 
-           class="w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
+       
+        <a href="#seguridad"
+           class="menu-link w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
             SEGURIDAD Y CONFIANZA
         </a>
-        
-        <a href="/nosotros" 
-           class="w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
+       
+        <a href="#nosotros"
+           class="menu-link w-64 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold text-center rounded-2xl shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:brightness-110">
             SOBRE NOSOTROS
         </a>
     </div>
 </div>
+
+<script>
+    // Función para cerrar el menú
+    function closeMenu() {
+        const menuOverlay = document.getElementById('menuOverlay');
+        if (menuOverlay) {
+            menuOverlay.classList.add('opacity-0', 'invisible');
+            menuOverlay.classList.remove('opacity-100', 'visible');
+            // Rehabilitar scroll del body
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Función para navegar suavemente a las secciones
+    function smoothScrollToSection(targetId: string): void {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+
+    // Event listener para el botón de cerrar
+    document.addEventListener('DOMContentLoaded', () => {
+        const closeButton = document.getElementById('closeMenu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        // Cerrar menú con el botón X
+        if (closeButton) {
+            closeButton.addEventListener('click', closeMenu);
+        }
+
+        // Manejar clics en los enlaces del menú
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Extraer el ID de la sección del href
+                const href = link.getAttribute('href');
+                
+                // Validar que href no sea null y tenga el formato correcto
+                if (href && href.startsWith('#') && href.length > 1) {
+                    const targetId = href.substring(1); // Remover el #
+                    
+                    // Cerrar el menú primero
+                    closeMenu();
+                    
+                    // Esperar un poco para que se cierre el menú y luego hacer scroll
+                    setTimeout(() => {
+                        smoothScrollToSection(targetId);
+                    }, 300);
+                }
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera del contenido
+        const menuOverlay = document.getElementById('menuOverlay');
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', (e) => {
+                if (e.target === menuOverlay) {
+                    closeMenu();
+                }
+            });
+        }
+
+        // Cerrar menú con la tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMenu();
+            }
+        });
+    });
+</script>

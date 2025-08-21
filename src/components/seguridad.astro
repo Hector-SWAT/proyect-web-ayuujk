@@ -16,41 +16,32 @@ import MobileMenu from "../components/MobileMenu.astro";
 </section>
 
 <Layout title="AYUUJK - Seguridad y Confianza">
-    
-     <!-- Contenedor principal con fondo específico -->
+    <!-- Contenedor principal con fondo nocturno específico -->
     <div
         class="min-h-screen bg-cover bg-center bg-no-repeat relative"
-        style="background-image: url('/backgrounds/fondo-day1.png');"
+        style="background-image: url('/backgrounds/fondoop2.png');"
     >
-        <!-- Efecto de difuminado superior -->
-        <div
-            class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-900 to-transparent z-10"
-        >
-        </div>
-
-        <!-- Efecto de difuminado inferior -->
-        <div
-            class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-900 to-transparent z-10"
-        >
-        </div> 
-        
         <!-- Overlay nocturno para mejor contraste -->
         <div class="absolute inset-0 bg-black bg-opacity-80"></div>
-         
+
         <!-- Contenido principal -->
-        <main class="relative z-30 flex flex-col min-h-screen max-w-[430px] mx-auto">
-            
+        <main
+            class="relative z-30 flex flex-col min-h-screen max-w-[430px] mx-auto"
+        >
             <!-- Logo / bolita amarilla -->
             <div class="relative w-full flex justify-center">
                 <div
                     class="w-3 h-3 bg-yellow-400 rounded-full absolute"
                     style="top: 130px; left: 300px; box-shadow: 0 0 8px 4px rgba(255, 200, 0, 0.6);"
-                ></div>
+                >
+                </div>
             </div>
 
             <!-- Título -->
             <div class="text-center mb-12 pt-36">
-                <h1 class="text-4xl font-Oswald font-semibold mb-4 tracking-wider text-white">
+                <h1
+                    class="text-4xl font-Oswald font-semibold mb-4 tracking-wider text-white"
+                >
                     AYUUJK
                 </h1>
             </div>
@@ -60,7 +51,8 @@ import MobileMenu from "../components/MobileMenu.astro";
                 <div class="relative">
                     <div
                         class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-64 h-8 bg-black/50 rounded-full blur-lg"
-                    ></div>
+                    >
+                    </div>
                     <img
                         src="/seguridad-icons/taxi-seguridad.png"
                         alt="Taxi AYUUJK"
@@ -71,10 +63,14 @@ import MobileMenu from "../components/MobileMenu.astro";
 
             <!-- Subtítulos -->
             <div class="text-center mb-3 pt-2">
-                <h2 class="text-3xl font-Poppins font-bold tracking-wide glowing-text-shadow-night mb-1 text-blue-400">
+                <h2
+                    class="text-3xl font-Poppins font-bold tracking-wide glowing-text-shadow-night mb-1 text-blue-400"
+                >
                     SEGURIDAD Y
                 </h2>
-                <h2 class="text-3xl font-poppins font-bold tracking-wide glowing-text-shadow-night text-blue-400">
+                <h2
+                    class="text-3xl font-poppins font-bold tracking-wide glowing-text-shadow-night text-blue-400"
+                >
                     CONFIANZA
                 </h2>
             </div>
@@ -92,32 +88,68 @@ import MobileMenu from "../components/MobileMenu.astro";
                     </div> -->
 
                     <!-- Conductor Verificado -->
-                    <div class="flex items-center gap-4 text-shadow-white security-item">
-                        <img src="/seguridad-icons/calificacion-seguridad.png" alt="Verificado" class="w-8 h-8 security-icon" />
+                    <div
+                        class="flex items-center gap-4 text-shadow-white security-item"
+                    >
+                        <img
+                            src="/seguridad-icons/calificacion-seguridad.png"
+                            alt="Verificado"
+                            class="w-8 h-8 security-icon"
+                        />
                         <div class="flex flex-col">
-                            <span class="text-white font-semibold text-base sm:text-lg security-text">Conductor Verificado</span>
-                            <span class="text-blue-300 text-sm text-shadow-dark security-subtext">Licencias y antecedentes</span>
+                            <span
+                                class="text-white font-semibold text-base sm:text-lg security-text"
+                                >Conductor Verificado</span
+                            >
+                            <span
+                                class="text-blue-300 text-sm text-shadow-dark security-subtext"
+                                >Licencias y antecedentes</span
+                            >
                         </div>
                     </div>
 
                     <!-- Vehículo Inspeccionado -->
-                    <div class="flex items-center gap-4 text-shadow-white security-item">
-                        <img src="/seguridad-icons/taximini-icon.png" alt="Inspección" class="w-8 h-8 security-icon" />
+                    <div
+                        class="flex items-center gap-4 text-shadow-white security-item"
+                    >
+                        <img
+                            src="/seguridad-icons/taximini-icon.png"
+                            alt="Inspección"
+                            class="w-8 h-8 security-icon"
+                        />
                         <div class="flex flex-col">
-                            <span class="text-white font-semibold text-base sm:text-lg security-text">Vehículo Inspeccionado</span>
-                            <span class="text-blue-300 text-sm text-shadow-dark security-subtext">Mantenimiento regular</span>
+                            <span
+                                class="text-white font-semibold text-base sm:text-lg security-text"
+                                >Vehículo Inspeccionado</span
+                            >
+                            <span
+                                class="text-blue-300 text-sm text-shadow-dark security-subtext"
+                                >Mantenimiento regular</span
+                            >
                         </div>
                     </div>
 
                     <!-- Atencion 24/7 -->
-                    <div class="flex items-center gap-4 text-shadow-white security-item">
-                        <img src="/seguridad-icons/24hr-icon.png" alt="Seguro" class="w-8 h-8 security-icon" />
+                    <div
+                        class="flex items-center gap-4 text-shadow-white security-item"
+                    >
+                        <img
+                            src="/seguridad-icons/24hr-icon.png"
+                            alt="Seguro"
+                            class="w-8 h-8 security-icon"
+                        />
                         <div class="flex flex-col">
-                            <span class="text-white font-semibold text-base sm:text-lg security-text">Atencion 24/7</span>
-                            <span class="text-blue-300 text-sm text-shadow-dark security-subtext">En toda el área de Los Ángeles</span>
+                            <span
+                                class="text-white font-semibold text-base sm:text-lg security-text"
+                                >Atencion 24/7</span
+                            >
+                            <span
+                                class="text-blue-300 text-sm text-shadow-dark security-subtext"
+                                >En toda el área de Los Ángeles</span
+                            >
                         </div>
                     </div>
-
+                    
                     <!-- Botón de emergencia -->
                     <!-- <div class="flex items-center gap-4 text-shadow-white security-item">
                         <img src="/security-icon/emergency-icon.png" alt="Emergencia" class="w-8 h-8 security-icon" />
@@ -131,7 +163,10 @@ import MobileMenu from "../components/MobileMenu.astro";
 
             <!-- Indicador inferior -->
             <div class="flex justify-center pb-4">
-                <div class="w-32 h-1 bg-blue-400/50 rounded-full night-indicator"></div>
+                <div
+                    class="w-32 h-1 bg-blue-400/50 rounded-full night-indicator"
+                >
+                </div>
             </div>
         </main>
     </div>
@@ -145,7 +180,8 @@ import MobileMenu from "../components/MobileMenu.astro";
     }
 
     @keyframes floatNight {
-        0%, 100% {
+        0%,
+        100% {
             transform: translateY(0px);
         }
         50% {
@@ -155,7 +191,7 @@ import MobileMenu from "../components/MobileMenu.astro";
 
     /* Efecto brillante nocturno para el texto */
     .glowing-text-shadow-night {
-        text-shadow: 
+        text-shadow:
             2px 2px 4px rgba(0, 0, 0, 0.9),
             0 0 10px rgba(59, 130, 246, 0.6),
             0 0 20px rgba(59, 130, 246, 0.4),
@@ -164,15 +200,16 @@ import MobileMenu from "../components/MobileMenu.astro";
     }
 
     @keyframes textGlowNight {
-        0%, 100% {
-            text-shadow: 
+        0%,
+        100% {
+            text-shadow:
                 2px 2px 4px rgba(0, 0, 0, 0.9),
                 0 0 10px rgba(59, 130, 246, 0.6),
                 0 0 20px rgba(59, 130, 246, 0.4),
                 0 0 30px rgba(59, 130, 246, 0.2);
         }
         50% {
-            text-shadow: 
+            text-shadow:
                 3px 3px 6px rgba(0, 0, 0, 1),
                 0 0 15px rgba(59, 130, 246, 0.8),
                 0 0 25px rgba(59, 130, 246, 0.6),
@@ -201,11 +238,21 @@ import MobileMenu from "../components/MobileMenu.astro";
         backdrop-filter: blur(5px);
     }
 
-    .security-item:nth-child(1) { animation-delay: 0.1s; }
-    .security-item:nth-child(2) { animation-delay: 0.2s; }
-    .security-item:nth-child(3) { animation-delay: 0.3s; }
-    .security-item:nth-child(4) { animation-delay: 0.4s; }
-    .security-item:nth-child(5) { animation-delay: 0.5s; }
+    .security-item:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    .security-item:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .security-item:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    .security-item:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+    .security-item:nth-child(5) {
+        animation-delay: 0.5s;
+    }
 
     @keyframes slideInRight {
         to {
@@ -247,7 +294,8 @@ import MobileMenu from "../components/MobileMenu.astro";
     }
 
     @keyframes nightPulse {
-        0%, 100% {
+        0%,
+        100% {
             background-color: rgba(59, 130, 246, 0.5);
             box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
         }
@@ -263,7 +311,7 @@ import MobileMenu from "../components/MobileMenu.astro";
             gap: 0.75rem;
             padding: 0.5rem;
         }
-        
+
         .security-icon {
             width: 1.75rem;
             height: 1.75rem;
@@ -273,14 +321,16 @@ import MobileMenu from "../components/MobileMenu.astro";
 
 <script is:inline>
     // Menú móvil
-    document.getElementById("mobileMenuButton")?.addEventListener("click", () => {
-        const button = document.getElementById("mobileMenuButton");
-        button.style.transform = "scale(0.95)";
-        setTimeout(() => {
-            button.style.transform = "scale(1)";
-            window.location.href = "/MobileMenu";
-        }, 150);
-    });
+    document
+        .getElementById("mobileMenuButton")
+        ?.addEventListener("click", () => {
+            const button = document.getElementById("mobileMenuButton");
+            button.style.transform = "scale(0.95)";
+            setTimeout(() => {
+                button.style.transform = "scale(1)";
+                window.location.href = "/MobileMenu";
+            }, 150);
+        });
 
     // Efecto parallax nocturno solo para esta página
     let tickingNight = false;
@@ -302,10 +352,10 @@ import MobileMenu from "../components/MobileMenu.astro";
 
     // Efecto de estrellas parpadeantes (opcional)
     function createStars() {
-        const main = document.querySelector('main');
+        const main = document.querySelector("main");
         for (let i = 0; i < 5; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
+            const star = document.createElement("div");
+            star.className = "star";
             star.style.cssText = `
                 position: absolute;
                 width: 2px;
@@ -322,7 +372,7 @@ import MobileMenu from "../components/MobileMenu.astro";
     }
 
     // CSS para las estrellas
-    const starStyle = document.createElement('style');
+    const starStyle = document.createElement("style");
     starStyle.textContent = `
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; transform: scale(1); }
@@ -330,7 +380,7 @@ import MobileMenu from "../components/MobileMenu.astro";
         }
     `;
     document.head.appendChild(starStyle);
-    
+
     // Crear estrellas al cargar la página
     createStars();
 </script>
