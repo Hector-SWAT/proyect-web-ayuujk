@@ -3,6 +3,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 ---
+
 <!-- /* =========================================================
    Proyecto desarrollado con Astro + TailwindCSS + Node.js
    Autores: Hector-SWAT & Luis
@@ -74,7 +75,7 @@ import Header from "../components/Header.astro";
 						id="carousel"
 						class="flex transition-transform duration-500 ease-in-out"
 					>
-						<!-- Tarjeta Conductor 1 - Fernando -->
+						<!-- Tarjeta Conductor 1 -  -->
 						<div
 							class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700"
 						>
@@ -132,16 +133,16 @@ import Header from "../components/Header.astro";
 								<!-- Botón de WhatsApp -->
 								<button
 									class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
-									onclick="window.open('https://wa.me/2134928587?text=Hola%20Fernando%2C%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles', '_blank')"
+									onclick="window.open('https://wa.me/13134928587?text=Hola,%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles%20(Enviar%20ubicacion)', '_blank')"
 								>
-									<img src="/contacto-icons/whatsapp-icon.png" alt="WhatsApp" class="w-6 h-6">
+									<img src="/contacto-icons/whatsapp.png" alt="WhatsApp" class="w-6 h-6">
 									WhatsApp
 								</button>
 								
 								<!-- Botón de Teléfono -->
 								<button
 									class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
-									onclick="window.location.href='tel:+12134928587'"
+									onclick="window.location.href='tel:+2134928587'"
 								>
 									<img src="/contacto-icons/phone-icon.png" alt="Teléfono" class="w-6 h-6">
 									Llamar ahora
@@ -163,7 +164,7 @@ import Header from "../components/Header.astro";
 							</button>
 						</div>
 
-						<!-- Tarjeta Conductor 2 - Carlos -->
+						<!-- Tarjeta Conductor 2 -  -->
 						<div
 							class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700"
 						>
@@ -218,16 +219,16 @@ import Header from "../components/Header.astro";
 								<!-- Botón de WhatsApp -->
 								<button
 									class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
-									onclick="window.open('https://wa.me/3239010216?text=Hola%20Carlos%2C%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles', '_blank')"
+									onclick="window.open('https://wa.me/13239010216?text=Hola,%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles%20(Enviar%20ubicacion)', '_blank')"
 								>
-									<img src="/contacto-icons/whatsapp-icon.png" alt="WhatsApp" class="w-6 h-6">
+									<img src="/contacto-icons/whatsapp.png" alt="WhatsApp" class="w-6 h-6">
 									WhatsApp
 								</button>
 								
 								<!-- Botón de Teléfono -->
 								<button
 									class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
-									onclick="window.location.href='tel:+13239010216'"
+									onclick="window.location.href='tel:+3239010216'"
 								>
 									<img src="/contacto-icons/phone-icon.png" alt="Teléfono" class="w-6 h-6">
 									Llamar ahora
@@ -466,7 +467,7 @@ import Header from "../components/Header.astro";
 <script is:inline>
 	// Variables del carrusel
 	let currentSlide = 0;
-	const totalSlides = 2; // Actualizado a 2 conductores
+	const totalSlides = 2; // Corregido: ahora son 2 slides, no 4
 	const carousel = document.getElementById("carousel");
 	const dots = document.querySelectorAll(".carousel-dot");
 	const condButtons = document.querySelectorAll(".cond-button");
