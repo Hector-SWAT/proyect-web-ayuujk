@@ -3,19 +3,19 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 ---
+
 <!-- /* =========================================================
    Proyecto desarrollado con Astro + TailwindCSS + Node.js
    Autores: Hector-SWAT & Luis
    Año: 2025
 ========================================================= */ -->
-
 <section id="contacto">
-  <!-- contenido contacto -->
+	<!-- contenido contacto -->
 </section>
 
 <Layout title="Contacto - AYUUJK Taxi Service">
 	<Header />
-	
+
 	<!-- Contenido principal con imagen de fondo -->
 	<div
 		class="min-h-screen bg-cover bg-center bg-no-repeat relative"
@@ -25,8 +25,9 @@ import Header from "../components/Header.astro";
 		<div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
 		<!-- Contenido principal -->
-		<main class="flex flex-col items-center px-6 min-h-screen relative pt-24">
-			
+		<main
+			class="flex flex-col items-center px-6 min-h-screen relative pt-24"
+		>
 			<!-- Título de la sección -->
 			<div class="text-center mb-8">
 				<h1
@@ -46,20 +47,38 @@ import Header from "../components/Header.astro";
 			<!-- Carrusel de conductores -->
 			<div class="relative w-full max-w-sm mb-8">
 				<!-- Flechas de navegación -->
-				<button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-2 transition-colors shadow-lg">
-					<img src="/contacto-icons/flecha-right.png" alt="Anterior" class="w-5 h-5 rotate-180" />
+				<button
+					id="prevBtn"
+					class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-2 transition-colors shadow-lg"
+				>
+					<img
+						src="/contacto-icons/flecha-right.png"
+						alt="Anterior"
+						class="w-5 h-5 rotate-180"
+					/>
 				</button>
-				
-				<button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-2 transition-colors shadow-lg">
-					<img src="/contacto-icons/flecha-right.png" alt="Siguiente" class="w-5 h-5" />
+
+				<button
+					id="nextBtn"
+					class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-2 transition-colors shadow-lg"
+				>
+					<img
+						src="/contacto-icons/flecha-right.png"
+						alt="Siguiente"
+						class="w-5 h-5"
+					/>
 				</button>
 
 				<!-- Contenedor del carrusel -->
 				<div class="overflow-hidden rounded-2xl">
-					<div id="carousel" class="flex transition-transform duration-500 ease-in-out">
-						
-						<!-- Tarjeta Conductor 1 - Fernando -->
-						<div class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700">
+					<div
+						id="carousel"
+						class="flex transition-transform duration-500 ease-in-out"
+					>
+						<!-- Tarjeta Conductor 1 -  -->
+						<div
+							class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700"
+						>
 							<!-- Foto del conductor -->
 							<div class="flex justify-center mb-6">
 								<div class="relative">
@@ -68,37 +87,87 @@ import Header from "../components/Header.astro";
 										alt="Fernando Martinez - Conductor"
 										class="w-24 h-24 rounded-full object-cover border-4 border-yellow-400 shadow-lg"
 									/>
-									<div class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+									<div
+										class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"
+									>
+									</div>
 								</div>
 							</div>
 
 							<!-- Información del conductor -->
 							<div class="text-center mb-6">
-								<h3 class="text-xl font-bold text-white mb-2">Cond. 1</h3>
-								<p class="text-yellow-400 font-semibold mb-3">Conductor 5 Estrellas</p>
-								
+								<h3 class="text-xl font-bold text-white mb-2">
+									Cond. 1
+								</h3>
+								<p class="text-yellow-400 font-semibold mb-3">
+									Conductor 5 Estrellas
+								</p>
+
 								<!-- Estrellas -->
 								<div class="flex justify-center space-x-1 mb-4">
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
 								</div>
 							</div>
 
-							<!-- Botón principal -->
+							<!-- Botones de contacto (ocultos inicialmente) -->
+							<div id="contact-buttons-1" class="hidden space-y-3">
+								<!-- Botón de WhatsApp -->
+								<button
+									class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
+									onclick="window.open('https://wa.me/2134928587?text=Hola,%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles%20(Enviar%20ubicacion)', '_blank')"
+								>
+									<img src="/contacto-icons/whatsapp.png" alt="WhatsApp" class="w-6 h-6">
+									WhatsApp
+								</button>
+								
+								<!-- Botón de Teléfono -->
+								<button
+									class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
+									onclick="window.location.href='tel:+2134928587'"
+								>
+									<img src="/contacto-icons/phone-icon.png" alt="Teléfono" class="w-6 h-6">
+									Llamar ahora
+								</button>
+							</div>
+
+							<!-- Botón principal para mostrar opciones -->
 							<button
-								class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden"
-								onclick="window.open('https://wa.me/50379109103?text=Hola%20Fernando%2C%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles', '_blank')"
+								id="contact-button-1"
+								class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden mt-3"
+								onclick="toggleContactOptions(1)"
 							>
-								CONTACTAR FERNANDO
-								<img src="/icons/flecha.png" alt="flecha" class="absolute -bottom-1 -right-1 w-8 h-8" />
+								CONTACTAR OP1
+								<img
+									src="/icons/flecha.png"
+									alt="flecha"
+									class="absolute -bottom-1 -right-1 w-8 h-8"
+								/>
 							</button>
 						</div>
 
-						<!-- Tarjeta Conductor 2 - Carlos -->
-						<div class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700">
+						<!-- Tarjeta Conductor 2 -  -->
+						<div
+							class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700"
+						>
 							<div class="flex justify-center mb-6">
 								<div class="relative">
 									<img
@@ -106,99 +175,78 @@ import Header from "../components/Header.astro";
 										alt="Carlos Rodriguez - Conductor"
 										class="w-24 h-24 rounded-full object-cover border-4 border-yellow-400 shadow-lg"
 									/>
-									<div class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+									<div
+										class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"
+									>
+									</div>
 								</div>
 							</div>
 
 							<div class="text-center mb-6">
-								<h3 class="text-xl font-bold text-white mb-2">Cond. 2</h3>
-								<p class="text-yellow-400 font-semibold mb-3">Conductor 5 Estrellas</p>
-								
+								<h3 class="text-xl font-bold text-white mb-2">
+									Cond. 2
+								</h3>
+								<p class="text-yellow-400 font-semibold mb-3">
+									Conductor 5 Estrellas
+								</p>
+
 								<div class="flex justify-center space-x-1 mb-4">
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
+									<span
+										class="star-icon text-yellow-400 text-xl"
+										>★</span
+									>
 								</div>
 							</div>
 
-							<button
-								class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden"
-								onclick="window.open('https://wa.me/50379109104?text=Hola%20Carlos%2C%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles', '_blank')"
-							>
-								CONTACTAR CARLOS
-								<img src="/icons/flecha.png" alt="flecha" class="absolute -bottom-1 -right-1 w-8 h-8" />
-							</button>
-						</div>
-
-						<!-- Tarjeta Conductor 3 - Miguel -->
-						<div class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700">
-							<div class="flex justify-center mb-6">
-								<div class="relative">
-									<img
-										src="/contacto-icons/user-cond.png"
-										alt="Miguel Santos - Conductor"
-										class="w-24 h-24 rounded-full object-cover border-4 border-yellow-400 shadow-lg"
-									/>
-									<div class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
-								</div>
-							</div>
-
-							<div class="text-center mb-6">
-								<h3 class="text-xl font-bold text-white mb-2">Cond. 3</h3>
-								<p class="text-yellow-400 font-semibold mb-3">Conductor 5 Estrellas</p>
+							<!-- Botones de contacto (ocultos inicialmente) -->
+							<div id="contact-buttons-2" class="hidden space-y-3">
+								<!-- Botón de WhatsApp -->
+								<button
+									class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
+									onclick="window.open('https://wa.me/3239010216?text=Hola,%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles%20(Enviar%20ubicacion)', '_blank')"
+								>
+									<img src="/contacto-icons/whatsapp.png" alt="WhatsApp" class="w-6 h-6">
+									WhatsApp
+								</button>
 								
-								<div class="flex justify-center space-x-1 mb-4">
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-								</div>
+								<!-- Botón de Teléfono -->
+								<button
+									class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
+									onclick="window.location.href='tel:+3239010216'"
+								>
+									<img src="/contacto-icons/phone-icon.png" alt="Teléfono" class="w-6 h-6">
+									Llamar ahora
+								</button>
 							</div>
 
+							<!-- Botón principal para mostrar opciones -->
 							<button
-								class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden"
-								onclick="window.open('https://wa.me/50379109105?text=Hola%20Miguel%2C%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles', '_blank')"
+								id="contact-button-2"
+								class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden mt-3"
+								onclick="toggleContactOptions(2)"
 							>
-								CONTACTAR MIGUEL
-								<img src="/icons/flecha.png" alt="flecha" class="absolute -bottom-1 -right-1 w-8 h-8" />
-							</button>
-						</div>
-
-						<!-- Tarjeta Conductor 4 - Roberto -->
-						<div class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700">
-							<div class="flex justify-center mb-6">
-								<div class="relative">
-									<img
-										src="/contacto-icons/user-cond.png"
-										alt="Roberto Morales - Conductor"
-										class="w-24 h-24 rounded-full object-cover border-4 border-yellow-400 shadow-lg"
-									/>
-									<div class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
-								</div>
-							</div>
-
-							<div class="text-center mb-6">
-								<h3 class="text-xl font-bold text-white mb-2">Cond. 4</h3>
-								<p class="text-yellow-400 font-semibold mb-3">Conductor 5 Estrellas</p>
-								
-								<div class="flex justify-center space-x-1 mb-4">
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-									<span class="star-icon text-yellow-400 text-xl">★</span>
-								</div>
-							</div>
-
-							<button
-								class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden"
-								onclick="window.open('https://wa.me/50379109106?text=Hola%20Roberto%2C%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles', '_blank')"
-							>
-								CONTACTAR ROBERTO
-								<img src="/icons/flecha.png" alt="flecha" class="absolute -bottom-1 -right-1 w-8 h-8" />
+								CONTACTAR OP2
+								<img
+									src="/icons/flecha.png"
+									alt="flecha"
+									class="absolute -bottom-1 -right-1 w-8 h-8"
+								/>
 							</button>
 						</div>
 					</div>
@@ -206,43 +254,50 @@ import Header from "../components/Header.astro";
 
 				<!-- Indicadores de posición -->
 				<div class="flex justify-center mt-4 space-x-2">
-					<button class="carousel-dot w-3 h-3 rounded-full bg-yellow-400 transition-opacity" data-slide="0"></button>
-					<button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-opacity" data-slide="1"></button>
-					<button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-opacity" data-slide="2"></button>
-					<button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-opacity" data-slide="3"></button>
+					<button
+						class="carousel-dot w-3 h-3 rounded-full bg-yellow-400 transition-opacity"
+						data-slide="0"></button>
+					<button
+						class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-opacity"
+						data-slide="1"></button>
 				</div>
 
-				<!-- Botones de acceso rápido COND -->
-				<div class="grid grid-cols-4 gap-3 mt-6">
-					<button class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg" data-conductor="0">
-						<div class="text-black font-bold text-sm mb-1">COND</div>
+				<!-- Botones centrados -->
+				<div class="flex justify-center gap-6 mt-6">
+					<button
+						class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg"
+						data-conductor="0"
+					>
+						<div class="text-black font-bold text-sm mb-1">
+							COND
+						</div>
 						<div class="text-black font-black text-lg">1</div>
 					</button>
 
-					<button class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg" data-conductor="1">
-						<div class="text-black font-bold text-sm mb-1">COND</div>
+					<button
+						class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg"
+						data-conductor="1"
+					>
+						<div class="text-black font-bold text-sm mb-1">
+							COND
+						</div>
 						<div class="text-black font-black text-lg">2</div>
-					</button>
-
-					<button class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg" data-conductor="2">
-						<div class="text-black font-bold text-sm mb-1">COND</div>
-						<div class="text-black font-black text-lg">3</div>
-					</button>
-
-					<button class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg" data-conductor="3">
-						<div class="text-black font-bold text-sm mb-1">COND</div>
-						<div class="text-black font-black text-lg">4</div>
 					</button>
 				</div>
 			</div>
 
 			<!-- Información adicional -->
-			<div class="text-center text-white bg-black bg-opacity-50 rounded-lg p-4 max-w-sm w-full">
+			<div
+				class="text-center text-white bg-black bg-opacity-50 rounded-lg p-4 max-w-sm w-full"
+			>
 				<p class="text-sm mb-2">
-					<span class="text-yellow-400 font-semibold">Servicio 24/7</span>
+					<span class="text-yellow-400 font-semibold"
+						>Servicio 24/7</span
+					>
 				</p>
 				<p class="text-xs text-gray-300">
-					Respuesta inmediata • Tarifas preferenciales • Servicio confiable
+					Respuesta inmediata • Tarifas preferenciales • Servicio
+					confiable
 				</p>
 			</div>
 
@@ -259,7 +314,7 @@ import Header from "../components/Header.astro";
 <style>
 	/* Estilos heredados */
 	.glowing-text-shadow {
-		text-shadow: 
+		text-shadow:
 			3px 3px 8px rgba(0, 0, 0, 0.8),
 			6px 6px 15px rgba(0, 0, 0, 0.6),
 			9px 9px 25px rgba(0, 0, 0, 0.4),
@@ -270,8 +325,9 @@ import Header from "../components/Header.astro";
 	}
 
 	@keyframes textGlowShadow {
-		0%, 100% {
-			text-shadow: 
+		0%,
+		100% {
+			text-shadow:
 				3px 3px 8px rgba(0, 0, 0, 0.8),
 				6px 6px 15px rgba(0, 0, 0, 0.6),
 				9px 9px 25px rgba(0, 0, 0, 0.4),
@@ -280,7 +336,7 @@ import Header from "../components/Header.astro";
 				0 0 30px rgba(255, 188, 7, 0.2);
 		}
 		50% {
-			text-shadow: 
+			text-shadow:
 				4px 4px 12px rgba(0, 0, 0, 0.9),
 				8px 8px 20px rgba(0, 0, 0, 0.7),
 				12px 12px 35px rgba(0, 0, 0, 0.5),
@@ -291,7 +347,8 @@ import Header from "../components/Header.astro";
 	}
 
 	@keyframes goldenPulse {
-		0%, 100% {
+		0%,
+		100% {
 			box-shadow:
 				0 0 20px rgba(0, 0, 0, 0.8),
 				0 0 30px rgba(255, 215, 0, 0.5),
@@ -327,7 +384,12 @@ import Header from "../components/Header.astro";
 		left: -100%;
 		width: 100%;
 		height: calc(100% + 4px);
-		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.6),
+			transparent
+		);
 		transition: left 0.6s ease;
 	}
 
@@ -340,14 +402,25 @@ import Header from "../components/Header.astro";
 		animation-delay: calc(var(--i) * 0.2s);
 	}
 
-	.star-icon:nth-child(1) { --i: 0; }
-	.star-icon:nth-child(2) { --i: 1; }
-	.star-icon:nth-child(3) { --i: 2; }
-	.star-icon:nth-child(4) { --i: 3; }
-	.star-icon:nth-child(5) { --i: 4; }
+	.star-icon:nth-child(1) {
+		--i: 0;
+	}
+	.star-icon:nth-child(2) {
+		--i: 1;
+	}
+	.star-icon:nth-child(3) {
+		--i: 2;
+	}
+	.star-icon:nth-child(4) {
+		--i: 3;
+	}
+	.star-icon:nth-child(5) {
+		--i: 4;
+	}
 
 	@keyframes starTwinkle {
-		0%, 100% {
+		0%,
+		100% {
 			opacity: 1;
 			transform: scale(1);
 		}
@@ -394,71 +467,86 @@ import Header from "../components/Header.astro";
 <script is:inline>
 	// Variables del carrusel
 	let currentSlide = 0;
-	const totalSlides = 4;
-	const carousel = document.getElementById('carousel');
-	const dots = document.querySelectorAll('.carousel-dot');
-	const condButtons = document.querySelectorAll('.cond-button');
-	const prevBtn = document.getElementById('prevBtn');
-	const nextBtn = document.getElementById('nextBtn');
+	const totalSlides = 2; // Corregido: ahora son 2 slides, no 4
+	const carousel = document.getElementById("carousel");
+	const dots = document.querySelectorAll(".carousel-dot");
+	const condButtons = document.querySelectorAll(".cond-button");
+	const prevBtn = document.getElementById("prevBtn");
+	const nextBtn = document.getElementById("nextBtn");
 
 	// Función para actualizar el carrusel
 	function updateCarousel(slideIndex) {
 		currentSlide = slideIndex;
 		const translateX = -slideIndex * 100;
 		carousel.style.transform = `translateX(${translateX}%)`;
-		
+
 		// Actualizar dots
 		dots.forEach((dot, index) => {
-			dot.classList.toggle('active', index === slideIndex);
-			dot.style.backgroundColor = index === slideIndex ? '#fbbf24' : 'rgba(255, 255, 255, 0.5)';
+			dot.classList.toggle("active", index === slideIndex);
+			dot.style.backgroundColor =
+				index === slideIndex ? "#fbbf24" : "rgba(255, 255, 255, 0.5)";
 		});
-		
+
 		// Actualizar botones COND
 		condButtons.forEach((btn, index) => {
-			btn.classList.toggle('active', index === slideIndex);
+			btn.classList.toggle("active", index === slideIndex);
 		});
 	}
 
 	// Event listeners para las flechas
-	prevBtn.addEventListener('click', () => {
-		const newSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+	prevBtn.addEventListener("click", () => {
+		const newSlide =
+			currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
 		updateCarousel(newSlide);
 	});
 
-	nextBtn.addEventListener('click', () => {
-		const newSlide = currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+	nextBtn.addEventListener("click", () => {
+		const newSlide =
+			currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
 		updateCarousel(newSlide);
 	});
 
 	// Event listeners para los dots
 	dots.forEach((dot, index) => {
-		dot.addEventListener('click', () => {
+		dot.addEventListener("click", () => {
 			updateCarousel(index);
 		});
 	});
 
 	// Event listeners para los botones COND
 	condButtons.forEach((btn, index) => {
-		btn.addEventListener('click', () => {
+		btn.addEventListener("click", () => {
 			updateCarousel(index);
 		});
 	});
 
-	// Auto-slide cada 5 segundos (opcional)
-	setInterval(() => {
-		const nextSlide = currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
-		updateCarousel(nextSlide);
-	}, 5000);
+	// Función para mostrar/ocultar opciones de contacto
+	function toggleContactOptions(driverId) {
+		const contactButtons = document.getElementById(`contact-buttons-${driverId}`);
+		const contactButton = document.getElementById(`contact-button-${driverId}`);
+		
+		if (contactButtons.classList.contains('hidden')) {
+			// Mostrar opciones
+			contactButtons.classList.remove('hidden');
+			contactButtons.classList.add('flex', 'flex-col');
+			contactButton.textContent = 'VOLVER';
+		} else {
+			// Ocultar opciones
+			contactButtons.classList.add('hidden');
+			contactButtons.classList.remove('flex', 'flex-col');
+			contactButton.textContent = driverId === 1 ? 'CONTACTAR OP1' : 'CONTACTAR OP2';
+		}
+	}
 
 	// Touch/swipe support para móvil
 	let startX = 0;
 	let endX = 0;
 
-	carousel.addEventListener('touchstart', (e) => {
+	carousel.addEventListener("touchstart", (e) => {
 		startX = e.touches[0].clientX;
 	});
 
-	carousel.addEventListener('touchend', (e) => {
+	carousel.addEventListener("touchend", (e) => {
 		endX = e.changedTouches[0].clientX;
 		handleSwipe();
 	});
@@ -466,15 +554,17 @@ import Header from "../components/Header.astro";
 	function handleSwipe() {
 		const swipeThreshold = 50;
 		const diff = startX - endX;
-		
+
 		if (Math.abs(diff) > swipeThreshold) {
 			if (diff > 0) {
 				// Swipe left - next slide
-				const nextSlide = currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+				const nextSlide =
+					currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
 				updateCarousel(nextSlide);
 			} else {
 				// Swipe right - previous slide
-				const prevSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+				const prevSlide =
+					currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
 				updateCarousel(prevSlide);
 			}
 		}
