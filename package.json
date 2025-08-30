@@ -12,6 +12,7 @@
     "@astrojs/sitemap": "^3.5.1",
     "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.13.2",
+    "astro-robots-txt": "^1.0.0",
     "dotenv": "^17.2.1",
     "postcss": "^8.5.6"
   },
