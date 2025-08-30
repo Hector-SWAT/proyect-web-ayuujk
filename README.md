@@ -1,43 +1,102 @@
-# Astro Starter Kit: Minimal
+# 🚕 Taxi Service Los Angeles
 
-```sh
-npm create astro@latest -- --template minimal
-```
+**Servicio de taxi confiable para la comunidad mexicana en Los Ángeles**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> Sitio web oficial: [taxiayuujk.com](https://taxiayuujk.com/)
 
-## 🚀 Project Structure
+## 📋 Descripción del Proyecto
 
-Inside of your Astro project, you'll see the following folders and files:
+Sitio web desarrollado en **Astro** para una empresa de taxis que ofrece servicios de transporte rápido, económico y seguro en Los Ángeles, California. Especializado en atender a la comunidad mexicana con un servicio cercano y confiable.
+
+### 🎯 Servicios Ofrecidos
+
+- ✅ Traslados urbanos en Los Ángeles
+- ✅ Servicio de delivery 
+- ✅ Mudanzas pequeñas y medianas
+- ✅ Atención 24/7
+- ✅ Tarifas económicas y transparentes
+- ✅ Conductores mexicanos confiables
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Framework:** Astro 4.0+
+- **Styling:** CSS nativo / Tailwind CSS
+- **Deployment:** Vercel
+- **Domain:** taxiayuujk.com
+
+## 🚀 Estructura del Proyecto
 
 ```text
 /
 ├── public/
+│   ├── favicon.svg
+│   └── images/
 ├── src/
+│   ├── components/
+│   ├── layouts/
 │   └── pages/
 │       └── index.astro
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 💻 Comandos de Desarrollo
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
+| Comando                   | Acción                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | Instala dependencias                             |
+| `npm run dev`             | Servidor de desarrollo en `localhost:4321`      |
+| `npm run build`           | Construye el sitio para producción              |
+| `npm run preview`         | Vista previa local del build                     |
+| `npm run astro ...`       | Comandos CLI de Astro                            |
 
-## 👀 Want to learn more?
+## 🌐 SEO y Marketing Digital
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Palabras Clave Objetivo:
+- "taxi Los Angeles"
+- "servicio de taxi mexicano"
+- "traslados económicos LA"
+- "taxi confiable Los Angeles"
+
+### Optimizaciones Implementadas:
+- ✅ Google Search Console configurado
+- ✅ Meta tags optimizados
+- ✅ Estructura semántica HTML
+- ✅ Velocidad de carga optimizada
+- ✅ Responsive design
+
+## 📱 Contacto y Reservas
+
+**Sitio web:** [taxiayuujk.com](https://taxiayuujk.com/)
+
+## 🔧 Desarrollo y Mantenimiento
+
+### Próximas Mejoras:
+- [ ] Sistema de reservas online
+- [ ] Integración con WhatsApp Business
+- [ ] Calculadora de tarifas
+- [ ] Tracking de viajes en tiempo real
+- [ ] App móvil nativa
+
+### SEO Local Pendiente:
+- [ ] Google Business Profile
+- [ ] Registro en directorios locales
+- [ ] Schema markup para empresas locales
+- [ ] Optimización para búsquedas "near me"
+
+## 📈 Analytics y Métricas
+
+- **Google Analytics:** Configurado
+- **Search Console:** Activo
+- **Core Web Vitals:** Optimizado
+- **Tiempo de carga:** < 2 segundos
+
+## 🚀 Deployment
+
+El sitio está deployado automáticamente en **Vercel** con integración continua desde el repositorio principal.
+
+**URL de producción:** https://taxiayuujk.com/
+
+---
+
+*"Más que un traslado, somos tu aliado en el camino"* 🛣️
