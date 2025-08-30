@@ -10,563 +10,544 @@ import Header from "../components/Header.astro";
    Año: 2025
 ========================================================= */ -->
 <section id="contacto">
-	<!-- contenido contacto -->
+  <!-- contenido contacto -->
 </section>
 
 <Layout title="Contacto - AYUUJK Taxi Service">
-	<Header />
+  <Header />
 
-	<!-- Contenido principal con imagen de fondo -->
-	<div
-		class="min-h-screen bg-cover bg-center bg-no-repeat relative"
-		style="background-image: url('/background.png');"
-	>
-		<!-- Overlay para mejor legibilidad -->
-		<div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  <!-- Contenido principal con imagen de fondo -->
+  <div
+    class="min-h-screen bg-cover bg-center bg-no-repeat relative"
+    style="background-image: url('/background.png');"
+  >
+    <!-- Overlay para mejor legibilidad -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
-		<!-- Contenido principal -->
-		<main
-			class="flex flex-col items-center px-6 min-h-screen relative pt-24"
-		>
-			<!-- Título de la sección -->
-			<div class="text-center mb-8">
-				<h1
-					class="text-3xl font-Oswald font-semibold mb-2 tracking-wider"
-					style="color: #FFFFFF;"
-				>
-					CONTACTA CON
-				</h1>
-				<h2
-					class="text-3xl font-Popins font-bold tracking-wide glowing-text-shadow"
-					style="color: #FFA500;"
-				>
-					NUESTROS CONDUCTORES
-				</h2>
-			</div>
+    <!-- Contenido principal -->
+    <main class="flex flex-col items-center px-6 min-h-screen relative pt-24">
+      <!-- Título de la sección -->
+      <div class="text-center mb-8">
+        <h1
+          class="text-3xl font-Oswald font-semibold mb-2 tracking-wider"
+          style="color: #FFFFFF;"
+        >
+          CONTACTA CON
+        </h1>
+        <h2
+          class="text-3xl font-Popins font-bold tracking-wide glowing-text-shadow"
+          style="color: #FFA500;"
+        >
+          NUESTROS CONDUCTORES
+        </h2>
+      </div>
 
-			<!-- Carrusel de conductores -->
-			<div class="relative w-full max-w-sm mb-8">
-				<!-- Flechas de navegación -->
-				<button
-					id="prevBtn"
-					class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-2 transition-colors shadow-lg"
-				>
-					<img
-						src="/contacto-icons/flecha-right.png"
-						alt="Anterior"
-						class="w-5 h-5 rotate-180"
-					/>
-				</button>
+      <!-- Carrusel de conductores -->
+      <div class="relative w-full max-w-sm mb-8">
+        <!-- Flechas de navegación -->
+        <button
+          id="prevBtn"
+          class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-2 transition-colors shadow-lg"
+        >
+          <img
+            src="/contacto-icons/flecha-right.png"
+            alt="Anterior"
+            class="w-5 h-5 rotate-180"
+          />
+        </button>
 
-				<button
-					id="nextBtn"
-					class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-2 transition-colors shadow-lg"
-				>
-					<img
-						src="/contacto-icons/flecha-right.png"
-						alt="Siguiente"
-						class="w-5 h-5"
-					/>
-				</button>
+        <button
+          id="nextBtn"
+          class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-2 transition-colors shadow-lg"
+        >
+          <img
+            src="/contacto-icons/flecha-right.png"
+            alt="Siguiente"
+            class="w-5 h-5"
+          />
+        </button>
 
-				<!-- Contenedor del carrusel -->
-				<div class="overflow-hidden rounded-2xl">
-					<div
-						id="carousel"
-						class="flex transition-transform duration-500 ease-in-out"
-					>
-						<!-- Tarjeta Conductor 1 -  -->
-						<div
-							class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700"
-						>
-							<!-- Foto del conductor -->
-							<div class="flex justify-center mb-6">
-								<div class="relative">
-									<img
-										src="/contacto-icons/user-cond.png"
-										alt="Fernando Martinez - Conductor"
-										class="w-24 h-24 rounded-full object-cover border-4 border-yellow-400 shadow-lg"
-									/>
-									<div
-										class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"
-									>
-									</div>
-								</div>
-							</div>
+        <!-- Contenedor del carrusel -->
+        <div class="overflow-hidden rounded-2xl">
+          <div
+            id="carousel"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
+            <!-- Tarjeta Conductor 1 -  -->
+            <div
+              class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700"
+            >
+              <!-- Foto del conductor -->
+              <div class="flex justify-center mb-6">
+                <div class="relative">
+                  <img
+                    src="/contacto-icons/user-cond.png"
+                    alt="Fernando Martinez - Conductor"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-yellow-400 shadow-lg"
+                  />
+                  <div
+                    class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"
+                  >
+                  </div>
+                </div>
+              </div>
 
-							<!-- Información del conductor -->
-							<div class="text-center mb-6">
-								<h3 class="text-xl font-bold text-white mb-2">
-									Cond. 1
-								</h3>
-								<p class="text-yellow-400 font-semibold mb-3">
-									Conductor 5 Estrellas
-								</p>
+              <!-- Información del conductor -->
+              <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-white mb-2">Cond. 1</h3>
+                <p class="text-yellow-400 font-semibold mb-3">
+                  Conductor 5 Estrellas
+                </p>
 
-								<!-- Estrellas -->
-								<div class="flex justify-center space-x-1 mb-4">
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-								</div>
-							</div>
+                <!-- Estrellas -->
+                <div class="flex justify-center space-x-1 mb-4">
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                </div>
+              </div>
 
-							<!-- Botones de contacto (ocultos inicialmente) -->
-							<div id="contact-buttons-1" class="hidden space-y-3">
-								<!-- Botón de WhatsApp -->
-								<button
-									class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
-									onclick="window.open('https://wa.me/+12134928587?text=Hola,%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles%20(Enviar%20ubicacion)', '_blank')"
-								>
-									<img src="/contacto-icons/whatsapp.png" alt="WhatsApp" class="w-6 h-6">
-									WhatsApp
-								</button>
-								
-								<!-- Botón de Teléfono -->
-								<button
-									class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
-									onclick="window.location.href='tel:+12134928587'"
-								>
-									<img src="/contacto-icons/phone-icon.png" alt="Teléfono" class="w-6 h-6">
-									Llamar ahora
-								</button>
-							</div>
+              <!-- Botones de contacto (ocultos inicialmente) -->
+              <div id="contact-buttons-1" class="hidden space-y-3">
+                <!-- Botón de WhatsApp -->
+                <button
+                  class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                  onclick="window.open('https://wa.me/+12134928587?text=Hola,%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles%20(Enviar%20ubicacion)', '_blank')"
+                >
+                  <img
+                    src="/contacto-icons/whatsapp.png"
+                    alt="WhatsApp"
+                    class="w-6 h-6"
+                  />
+                  WhatsApp
+                </button>
 
-							<!-- Botón principal para mostrar opciones -->
-							<button
-								id="contact-button-1"
-								class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden mt-3"
-								onclick="toggleContactOptions(1)"
-							>
-								CONTACTAR OP1
-								<img
-									src="/icons/flecha.png"
-									alt="flecha"
-									class="absolute -bottom-1 -right-1 w-8 h-8"
-								/>
-							</button>
-						</div>
+                <!-- Botón de Teléfono -->
+                <button
+                  class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                  onclick="window.location.href='tel:+12134928587'"
+                >
+                  <img
+                    src="/contacto-icons/phone-icon.png"
+                    alt="Teléfono"
+                    class="w-6 h-6"
+                  />
+                  Llamar ahora
+                </button>
+              </div>
 
-						<!-- Tarjeta Conductor 2 -  -->
-						<div
-							class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700"
-						>
-							<div class="flex justify-center mb-6">
-								<div class="relative">
-									<img
-										src="/contacto-icons/user-cond.png"
-										alt="Carlos Rodriguez - Conductor"
-										class="w-24 h-24 rounded-full object-cover border-4 border-yellow-400 shadow-lg"
-									/>
-									<div
-										class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"
-									>
-									</div>
-								</div>
-							</div>
+              <!-- Botón principal para mostrar opciones -->
+              <button
+                id="contact-button-1"
+                class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden mt-3"
+                onclick="toggleContactOptions(1)"
+              >
+                CONTACTAR OP1
+                <img
+                  src="/icons/flecha.png"
+                  alt="flecha"
+                  class="absolute -bottom-1 -right-1 w-8 h-8"
+                />
+              </button>
+            </div>
 
-							<div class="text-center mb-6">
-								<h3 class="text-xl font-bold text-white mb-2">
-									Cond. 2
-								</h3>
-								<p class="text-yellow-400 font-semibold mb-3">
-									Conductor 5 Estrellas
-								</p>
+            <!-- Tarjeta Conductor 2 -  -->
+            <div
+              class="carousel-card min-w-full bg-slate-800 bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-slate-700"
+            >
+              <div class="flex justify-center mb-6">
+                <div class="relative">
+                  <img
+                    src="/contacto-icons/user-cond.png"
+                    alt="Carlos Rodriguez - Conductor"
+                    class="w-24 h-24 rounded-full object-cover border-4 border-yellow-400 shadow-lg"
+                  />
+                  <div
+                    class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"
+                  >
+                  </div>
+                </div>
+              </div>
 
-								<div class="flex justify-center space-x-1 mb-4">
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-									<span
-										class="star-icon text-yellow-400 text-xl"
-										>★</span
-									>
-								</div>
-							</div>
+              <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-white mb-2">Cond. 2</h3>
+                <p class="text-yellow-400 font-semibold mb-3">
+                  Conductor 5 Estrellas
+                </p>
 
-							<!-- Botones de contacto (ocultos inicialmente) -->
-							<div id="contact-buttons-2" class="hidden space-y-3">
-								<!-- Botón de WhatsApp -->
-								<button
-									class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
-									onclick="window.open('https://wa.me/+13239010216?text=Hola,%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles%20(Enviar%20ubicacion)', '_blank')"
-								>
-									<img src="/contacto-icons/whatsapp.png" alt="WhatsApp" class="w-6 h-6">
-									WhatsApp
-								</button>
-								
-								<!-- Botón de Teléfono -->
-								<button
-									class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
-									onclick="window.location.href='tel:+13239010216'"
-								>
-									<img src="/contacto-icons/phone-icon.png" alt="Teléfono" class="w-6 h-6">
-									Llamar ahora
-								</button>
-							</div>
+                <div class="flex justify-center space-x-1 mb-4">
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                  <span class="star-icon text-yellow-400 text-xl">★</span>
+                </div>
+              </div>
 
-							<!-- Botón principal para mostrar opciones -->
-							<button
-								id="contact-button-2"
-								class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden mt-3"
-								onclick="toggleContactOptions(2)"
-							>
-								CONTACTAR OP2
-								<img
-									src="/icons/flecha.png"
-									alt="flecha"
-									class="absolute -bottom-1 -right-1 w-8 h-8"
-								/>
-							</button>
-						</div>
-					</div>
-				</div>
+              <!-- Botones de contacto (ocultos inicialmente) -->
+              <div id="contact-buttons-2" class="hidden space-y-3">
+                <!-- Botón de WhatsApp -->
+                <button
+                  class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                  onclick="window.open('https://wa.me/+13239010216?text=Hola,%20necesito%20un%20taxi%20URGENTE%20en%20Los%20Angeles%20(Enviar%20ubicacion)', '_blank')"
+                >
+                  <img
+                    src="/contacto-icons/whatsapp.png"
+                    alt="WhatsApp"
+                    class="w-6 h-6"
+                  />
+                  WhatsApp
+                </button>
 
-				<!-- Indicadores de posición -->
-				<div class="flex justify-center mt-4 space-x-2">
-					<button
-						class="carousel-dot w-3 h-3 rounded-full bg-yellow-400 transition-opacity"
-						data-slide="0"></button>
-					<button
-						class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-opacity"
-						data-slide="1"></button>
-				</div>
+                <!-- Botón de Teléfono -->
+                <button
+                  class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                  onclick="window.location.href='tel:+13239010216'"
+                >
+                  <img
+                    src="/contacto-icons/phone-icon.png"
+                    alt="Teléfono"
+                    class="w-6 h-6"
+                  />
+                  Llamar ahora
+                </button>
+              </div>
 
-				<!-- Botones centrados -->
-				<div class="flex justify-center gap-6 mt-6">
-					<button
-						class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg"
-						data-conductor="0"
-					>
-						<div class="text-black font-bold text-sm mb-1">
-							COND
-						</div>
-						<div class="text-black font-black text-lg">1</div>
-					</button>
+              <!-- Botón principal para mostrar opciones -->
+              <button
+                id="contact-button-2"
+                class="golden-pulse-button w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 relative overflow-hidden mt-3"
+                onclick="toggleContactOptions(2)"
+              >
+                CONTACTAR OP2
+                <img
+                  src="/icons/flecha.png"
+                  alt="flecha"
+                  class="absolute -bottom-1 -right-1 w-8 h-8"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
 
-					<button
-						class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg"
-						data-conductor="1"
-					>
-						<div class="text-black font-bold text-sm mb-1">
-							COND
-						</div>
-						<div class="text-black font-black text-lg">2</div>
-					</button>
-				</div>
-			</div>
+        <!-- Indicadores de posición -->
+        <div class="flex justify-center mt-4 space-x-2">
+          <button
+            class="carousel-dot w-3 h-3 rounded-full bg-yellow-400 transition-opacity"
+            data-slide="0"></button>
+          <button
+            class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 transition-opacity"
+            data-slide="1"></button>
+        </div>
 
-			<!-- Información adicional -->
-			<div
-				class="text-center text-white bg-black bg-opacity-50 rounded-lg p-4 max-w-sm w-full"
-			>
-				<p class="text-sm mb-2">
-					<span class="text-yellow-400 font-semibold"
-						>Servicio 24/7</span
-					>
-				</p>
-				<p class="text-xs text-gray-300">
-					Respuesta inmediata • Tarifas preferenciales • Servicio
-					confiable
-				</p>
-			</div>
+        <!-- Botones centrados -->
+        <div class="flex justify-center gap-6 mt-6">
+          <button
+            class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg"
+            data-conductor="0"
+          >
+            <div class="text-black font-bold text-sm mb-1">COND</div>
+            <div class="text-black font-black text-lg">1</div>
+          </button>
 
-			<!-- Indicador de página -->
-			<div
-				class="fixed bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white rounded-full"
-			>
-			</div>
-		</main>
-	</div>
+          <button
+            class="cond-button bg-gradient-to-b from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 rounded-lg p-3 flex flex-col items-center justify-center transition-all duration-300 shadow-lg"
+            data-conductor="1"
+          >
+            <div class="text-black font-bold text-sm mb-1">COND</div>
+            <div class="text-black font-black text-lg">2</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Información adicional mejorada -->
+      <div
+        class="text-center text-white bg-black bg-opacity-60 rounded-xl p-6 max-w-sm w-full mx-auto shadow-lg backdrop-blur-sm"
+      >
+        <p class="text-sm mb-2">
+          <span class="text-yellow-400 font-bold tracking-wide"
+            >Servicio 24/7</span
+          >
+        </p>
+        <p class="text-xs text-gray-300 mb-3">
+          Respuesta inmediata • Tarifas preferenciales • Servicio confiable
+        </p>
+        <p class="text-xs text-gray-400 italic">
+          © 2025 <span class="font-semibold">SWATcorps</span>. Todos los
+          derechos reservados.<br />
+          Sitio desarrollado por <span class="font-semibold">SWATcorps</span>
+        </p>
+      </div>
+
+      <!-- Indicador de página -->
+      <div
+        class="fixed bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white rounded-full"
+      >
+      </div>
+    </main>
+  </div>
 </Layout>
 
 <!-- ESTILOS CSS -->
 <style>
-	/* Estilos heredados */
-	.glowing-text-shadow {
-		text-shadow:
-			3px 3px 8px rgba(0, 0, 0, 0.8),
-			6px 6px 15px rgba(0, 0, 0, 0.6),
-			9px 9px 25px rgba(0, 0, 0, 0.4),
-			0 0 10px rgba(255, 188, 7, 0.6),
-			0 0 20px rgba(255, 188, 7, 0.4),
-			0 0 30px rgba(255, 188, 7, 0.2);
-		animation: textGlowShadow 2s ease-in-out infinite;
-	}
+  /* Estilos heredados */
+  .glowing-text-shadow {
+    text-shadow:
+      3px 3px 8px rgba(0, 0, 0, 0.8),
+      6px 6px 15px rgba(0, 0, 0, 0.6),
+      9px 9px 25px rgba(0, 0, 0, 0.4),
+      0 0 10px rgba(255, 188, 7, 0.6),
+      0 0 20px rgba(255, 188, 7, 0.4),
+      0 0 30px rgba(255, 188, 7, 0.2);
+    animation: textGlowShadow 2s ease-in-out infinite;
+  }
 
-	@keyframes textGlowShadow {
-		0%,
-		100% {
-			text-shadow:
-				3px 3px 8px rgba(0, 0, 0, 0.8),
-				6px 6px 15px rgba(0, 0, 0, 0.6),
-				9px 9px 25px rgba(0, 0, 0, 0.4),
-				0 0 10px rgba(255, 188, 7, 0.6),
-				0 0 20px rgba(255, 188, 7, 0.4),
-				0 0 30px rgba(255, 188, 7, 0.2);
-		}
-		50% {
-			text-shadow:
-				4px 4px 12px rgba(0, 0, 0, 0.9),
-				8px 8px 20px rgba(0, 0, 0, 0.7),
-				12px 12px 35px rgba(0, 0, 0, 0.5),
-				0 0 15px rgba(255, 188, 7, 0.8),
-				0 0 25px rgba(255, 188, 7, 0.6),
-				0 0 40px rgba(255, 188, 7, 0.3);
-		}
-	}
+  @keyframes textGlowShadow {
+    0%,
+    100% {
+      text-shadow:
+        3px 3px 8px rgba(0, 0, 0, 0.8),
+        6px 6px 15px rgba(0, 0, 0, 0.6),
+        9px 9px 25px rgba(0, 0, 0, 0.4),
+        0 0 10px rgba(255, 188, 7, 0.6),
+        0 0 20px rgba(255, 188, 7, 0.4),
+        0 0 30px rgba(255, 188, 7, 0.2);
+    }
+    50% {
+      text-shadow:
+        4px 4px 12px rgba(0, 0, 0, 0.9),
+        8px 8px 20px rgba(0, 0, 0, 0.7),
+        12px 12px 35px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(255, 188, 7, 0.8),
+        0 0 25px rgba(255, 188, 7, 0.6),
+        0 0 40px rgba(255, 188, 7, 0.3);
+    }
+  }
 
-	@keyframes goldenPulse {
-		0%,
-		100% {
-			box-shadow:
-				0 0 20px rgba(0, 0, 0, 0.8),
-				0 0 30px rgba(255, 215, 0, 0.5),
-				0 0 50px rgba(255, 215, 0, 0.3),
-				inset 0 0 15px rgba(255, 215, 0, 0.1);
-			transform: scale(1);
-		}
-		50% {
-			box-shadow:
-				0 0 30px rgba(0, 0, 0, 1),
-				0 0 50px rgba(255, 215, 0, 0.8),
-				0 0 90px rgba(255, 215, 0, 0.5),
-				inset 0 0 35px rgba(255, 215, 0, 0.3);
-			transform: scale(1.05);
-		}
-	}
+  @keyframes goldenPulse {
+    0%,
+    100% {
+      box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(255, 215, 0, 0.5),
+        0 0 50px rgba(255, 215, 0, 0.3),
+        inset 0 0 15px rgba(255, 215, 0, 0.1);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow:
+        0 0 30px rgba(0, 0, 0, 1),
+        0 0 50px rgba(255, 215, 0, 0.8),
+        0 0 90px rgba(255, 215, 0, 0.5),
+        inset 0 0 35px rgba(255, 215, 0, 0.3);
+      transform: scale(1.05);
+    }
+  }
 
-	.golden-pulse-button {
-		animation: goldenPulse 2s ease-in-out infinite;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-		border: 2px solid rgba(255, 215, 0, 0.3);
-	}
+  .golden-pulse-button {
+    animation: goldenPulse 2s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+  }
 
-	.golden-pulse-button:hover {
-		animation-duration: 0.8s;
-		transform: scale(1.08) !important;
-	}
+  .golden-pulse-button:hover {
+    animation-duration: 0.8s;
+    transform: scale(1.08) !important;
+  }
 
-	.golden-pulse-button::before {
-		content: "";
-		position: absolute;
-		top: -2px;
-		left: -100%;
-		width: 100%;
-		height: calc(100% + 4px);
-		background: linear-gradient(
-			90deg,
-			transparent,
-			rgba(255, 255, 255, 0.6),
-			transparent
-		);
-		transition: left 0.6s ease;
-	}
+  .golden-pulse-button::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -100%;
+    width: 100%;
+    height: calc(100% + 4px);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
 
-	.golden-pulse-button:hover::before {
-		left: 100%;
-	}
+  .golden-pulse-button:hover::before {
+    left: 100%;
+  }
 
-	.star-icon {
-		animation: starTwinkle 1.5s ease-in-out infinite;
-		animation-delay: calc(var(--i) * 0.2s);
-	}
+  .star-icon {
+    animation: starTwinkle 1.5s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+  }
 
-	.star-icon:nth-child(1) {
-		--i: 0;
-	}
-	.star-icon:nth-child(2) {
-		--i: 1;
-	}
-	.star-icon:nth-child(3) {
-		--i: 2;
-	}
-	.star-icon:nth-child(4) {
-		--i: 3;
-	}
-	.star-icon:nth-child(5) {
-		--i: 4;
-	}
+  .star-icon:nth-child(1) {
+    --i: 0;
+  }
+  .star-icon:nth-child(2) {
+    --i: 1;
+  }
+  .star-icon:nth-child(3) {
+    --i: 2;
+  }
+  .star-icon:nth-child(4) {
+    --i: 3;
+  }
+  .star-icon:nth-child(5) {
+    --i: 4;
+  }
 
-	@keyframes starTwinkle {
-		0%,
-		100% {
-			opacity: 1;
-			transform: scale(1);
-		}
-		50% {
-			opacity: 0.7;
-			transform: scale(1.1);
-		}
-	}
+  @keyframes starTwinkle {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+  }
 
-	/* NUEVOS ESTILOS PARA CARRUSEL */
-	.carousel-dot.active {
-		background-color: #fbbf24;
-		transform: scale(1.2);
-	}
+  /* NUEVOS ESTILOS PARA CARRUSEL */
+  .carousel-dot.active {
+    background-color: #fbbf24;
+    transform: scale(1.2);
+  }
 
-	.cond-button:hover {
-		transform: translateY(-2px) scale(1.05);
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-	}
+  .cond-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
 
-	.cond-button.active {
-		background: linear-gradient(135deg, #f59e0b, #d97706);
-		transform: scale(1.1);
-		box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-	}
+  .cond-button.active {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  }
 
-	/* Animación de entrada para las tarjetas */
-	.carousel-card {
-		animation: slideIn 0.5s ease-out;
-	}
+  /* Animación de entrada para las tarjetas */
+  .carousel-card {
+    animation: slideIn 0.5s ease-out;
+  }
 
-	@keyframes slideIn {
-		from {
-			opacity: 0;
-			transform: translateX(20px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 </style>
 
 <script is:inline>
-	// Variables del carrusel
-	let currentSlide = 0;
-	const totalSlides = 2; // Corregido: ahora son 2 slides, no 4
-	const carousel = document.getElementById("carousel");
-	const dots = document.querySelectorAll(".carousel-dot");
-	const condButtons = document.querySelectorAll(".cond-button");
-	const prevBtn = document.getElementById("prevBtn");
-	const nextBtn = document.getElementById("nextBtn");
+  // Variables del carrusel
+  let currentSlide = 0;
+  const totalSlides = 2; // Corregido: ahora son 2 slides, no 4
+  const carousel = document.getElementById("carousel");
+  const dots = document.querySelectorAll(".carousel-dot");
+  const condButtons = document.querySelectorAll(".cond-button");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
 
-	// Función para actualizar el carrusel
-	function updateCarousel(slideIndex) {
-		currentSlide = slideIndex;
-		const translateX = -slideIndex * 100;
-		carousel.style.transform = `translateX(${translateX}%)`;
+  // Función para actualizar el carrusel
+  function updateCarousel(slideIndex) {
+    currentSlide = slideIndex;
+    const translateX = -slideIndex * 100;
+    carousel.style.transform = `translateX(${translateX}%)`;
 
-		// Actualizar dots
-		dots.forEach((dot, index) => {
-			dot.classList.toggle("active", index === slideIndex);
-			dot.style.backgroundColor =
-				index === slideIndex ? "#fbbf24" : "rgba(255, 255, 255, 0.5)";
-		});
+    // Actualizar dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === slideIndex);
+      dot.style.backgroundColor =
+        index === slideIndex ? "#fbbf24" : "rgba(255, 255, 255, 0.5)";
+    });
 
-		// Actualizar botones COND
-		condButtons.forEach((btn, index) => {
-			btn.classList.toggle("active", index === slideIndex);
-		});
-	}
+    // Actualizar botones COND
+    condButtons.forEach((btn, index) => {
+      btn.classList.toggle("active", index === slideIndex);
+    });
+  }
 
-	// Event listeners para las flechas
-	prevBtn.addEventListener("click", () => {
-		const newSlide =
-			currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
-		updateCarousel(newSlide);
-	});
+  // Event listeners para las flechas
+  prevBtn.addEventListener("click", () => {
+    const newSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+    updateCarousel(newSlide);
+  });
 
-	nextBtn.addEventListener("click", () => {
-		const newSlide =
-			currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
-		updateCarousel(newSlide);
-	});
+  nextBtn.addEventListener("click", () => {
+    const newSlide = currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+    updateCarousel(newSlide);
+  });
 
-	// Event listeners para los dots
-	dots.forEach((dot, index) => {
-		dot.addEventListener("click", () => {
-			updateCarousel(index);
-		});
-	});
+  // Event listeners para los dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      updateCarousel(index);
+    });
+  });
 
-	// Event listeners para los botones COND
-	condButtons.forEach((btn, index) => {
-		btn.addEventListener("click", () => {
-			updateCarousel(index);
-		});
-	});
+  // Event listeners para los botones COND
+  condButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      updateCarousel(index);
+    });
+  });
 
-	// Función para mostrar/ocultar opciones de contacto
-	function toggleContactOptions(driverId) {
-		const contactButtons = document.getElementById(`contact-buttons-${driverId}`);
-		const contactButton = document.getElementById(`contact-button-${driverId}`);
-		
-		if (contactButtons.classList.contains('hidden')) {
-			// Mostrar opciones
-			contactButtons.classList.remove('hidden');
-			contactButtons.classList.add('flex', 'flex-col');
-			contactButton.textContent = 'VOLVER';
-		} else {
-			// Ocultar opciones
-			contactButtons.classList.add('hidden');
-			contactButtons.classList.remove('flex', 'flex-col');
-			contactButton.textContent = driverId === 1 ? 'CONTACTAR OP1' : 'CONTACTAR OP2';
-		}
-	}
+  // Función para mostrar/ocultar opciones de contacto
+  function toggleContactOptions(driverId) {
+    const contactButtons = document.getElementById(
+      `contact-buttons-${driverId}`
+    );
+    const contactButton = document.getElementById(`contact-button-${driverId}`);
 
-	// Touch/swipe support para móvil
-	let startX = 0;
-	let endX = 0;
+    if (contactButtons.classList.contains("hidden")) {
+      // Mostrar opciones
+      contactButtons.classList.remove("hidden");
+      contactButtons.classList.add("flex", "flex-col");
+      contactButton.textContent = "VOLVER";
+    } else {
+      // Ocultar opciones
+      contactButtons.classList.add("hidden");
+      contactButtons.classList.remove("flex", "flex-col");
+      contactButton.textContent =
+        driverId === 1 ? "CONTACTAR OP1" : "CONTACTAR OP2";
+    }
+  }
 
-	carousel.addEventListener("touchstart", (e) => {
-		startX = e.touches[0].clientX;
-	});
+  // Touch/swipe support para móvil
+  let startX = 0;
+  let endX = 0;
 
-	carousel.addEventListener("touchend", (e) => {
-		endX = e.changedTouches[0].clientX;
-		handleSwipe();
-	});
+  carousel.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
 
-	function handleSwipe() {
-		const swipeThreshold = 50;
-		const diff = startX - endX;
+  carousel.addEventListener("touchend", (e) => {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+  });
 
-		if (Math.abs(diff) > swipeThreshold) {
-			if (diff > 0) {
-				// Swipe left - next slide
-				const nextSlide =
-					currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
-				updateCarousel(nextSlide);
-			} else {
-				// Swipe right - previous slide
-				const prevSlide =
-					currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
-				updateCarousel(prevSlide);
-			}
-		}
-	}
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left - next slide
+        const nextSlide =
+          currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+        updateCarousel(nextSlide);
+      } else {
+        // Swipe right - previous slide
+        const prevSlide =
+          currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+        updateCarousel(prevSlide);
+      }
+    }
+  }
 </script>
