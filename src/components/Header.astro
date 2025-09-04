@@ -3,139 +3,280 @@
 import MobileMenu from "./MobileMenu.astro";
 ---
 
-<!-- Header flotante que no interfiere con el contenido -->
+<!-- Header azul transparente con efecto de partículas -->
 <header
-    class="absolute top-0 left-0 right-0 flex justify-between items-center p-4 pt-12 z-50 bg-gradient-to-b from-black/0 to-transparent"
+  id="main-header"
+  class="fixed top-0 left-0 right-0 flex justify-between items-center p-4 pt-12 z-50
+         bg-gradient-to-r from-blue-900/1 via-blue-800/1 to-blue-900/1
+         backdrop-blur-sm transition-all duration-300 overflow-hidden"
 >
-    <!-- Logo -->
-    <div class="flex items-center ml-4">
-        <a href="/" class="flex items-center">
-            <img
-                src="/logo-new-ayuujk.png"
-                alt="AYUUJK Logo"
-                class="w-16 h-16 object-contain"
-            />
-        </a>
-    </div>
+  <!-- Canvas para partículas -->
+  <canvas
+    id="particle-canvas"
+    class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
 
-    <!-- Menú hamburguesa -->
-    <mobile-menu-toggle
-        class="w-12 h-12 flex flex-col justify-center items-start p-2 bg-[#22272B] rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 relative mr-4 cursor-pointer"
-    >
-        <span class="w-5 h-0.5 bg-yellow-400 rounded shadow-lg mb-1"></span>
-        <span class="w-7 h-0.5 bg-yellow-400 rounded shadow-lg mb-1"></span>
-        <span class="w-8 h-0.5 bg-yellow-400 rounded shadow-lg"></span>
-    </mobile-menu-toggle>
+  <!-- Logo -->
+  <div class="flex items-center ml-4 z-10">
+    <a href="/" class="flex items-center">
+      <img
+        src="/logo-new-ayuujk.png"
+        alt="AYUUJK Logo"
+        class="w-16 h-16 object-contain"
+      />
+    </a>
+  </div>
+
+  <!-- Menú hamburguesa -->
+  <mobile-menu-toggle
+    id="menu-toggle"
+    class="w-12 h-12 flex flex-col justify-center items-start p-2 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 relative mr-4 cursor-pointer backdrop-blur-sm z-10 bg-black/60 border border-black/40"
+  >
+    <span class="w-5 h-0.5 mb-1 transition-all bg-yellow-400"></span>
+    <span class="w-7 h-0.5 mb-1 transition-all bg-yellow-400"></span>
+    <span class="w-8 h-0.5 transition-all bg-yellow-400"></span>
+  </mobile-menu-toggle>
 </header>
 
 <!-- Componente del menú móvil -->
 <MobileMenu />
 
 <script>
-    // Define el elemento personalizado para el botón hamburguesa
-    class MobileMenuToggle extends HTMLElement {
-        // Declarar propiedades de la clase con tipos explícitos
-        menuOverlay: HTMLElement | null = null;
-        closeMenuButton: HTMLElement | null = null;
-        menuLines: NodeListOf<HTMLSpanElement> | null = null;
-        isMenuOpen: boolean = false;
+  // Sistema de partículas y efectos del header
+  document.addEventListener("DOMContentLoaded", function () {
+    const header = document.getElementById("main-header") as HTMLElement;
+    const canvas = document.getElementById(
+      "particle-canvas"
+    ) as HTMLCanvasElement;
 
-        constructor() {
-            super();
-            this.isMenuOpen = false;
+    if (!header || !canvas) return;
 
-            // Event listener para abrir/cerrar el menú
-            this.addEventListener("click", () => {
-                this.toggleMenu();
-            });
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-            // Esperar a que el DOM esté completamente cargado
-            if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", () => {
-                    this.initializeMenu();
-                });
-            } else {
-                this.initializeMenu();
-            }
-        }
-
-        initializeMenu(): void {
-            // Ahora buscar el overlay del menú
-            this.menuOverlay = document.getElementById("menuOverlay");
-            this.closeMenuButton = document.getElementById("closeMenu");
-            this.menuLines = this.querySelectorAll("span");
-
-            // Event listener para el botón cerrar
-            if (this.closeMenuButton) {
-                this.closeMenuButton.addEventListener("click", () => {
-                    this.closeMenu();
-                });
-            }
-
-            // Cerrar menú al hacer clic fuera de los botones
-            if (this.menuOverlay) {
-                this.menuOverlay.addEventListener("click", (e: Event) => {
-                    if (e.target === this.menuOverlay) {
-                        this.closeMenu();
-                    }
-                });
-            }
-
-            // Cerrar menú con tecla Escape
-            document.addEventListener("keydown", (e: KeyboardEvent) => {
-                if (e.key === "Escape" && this.isMenuOpen) {
-                    this.closeMenu();
-                }
-            });
-        }
-
-        toggleMenu(): void {
-            if (!this.menuOverlay) return;
-
-            if (this.isMenuOpen) {
-                this.closeMenu();
-            } else {
-                this.openMenu();
-            }
-        }
-
-        openMenu(): void {
-            if (!this.menuOverlay || !this.menuLines) return;
-
-            this.menuOverlay.classList.remove("opacity-0", "invisible");
-            this.menuOverlay.classList.add("opacity-100", "visible");
-
-            // Animación del hamburger a X
-            if (this.menuLines[0])
-                this.menuLines[0].style.transform =
-                    "rotate(45deg) translate(6px, 6px)";
-            if (this.menuLines[1]) this.menuLines[1].style.opacity = "0";
-            if (this.menuLines[2])
-                this.menuLines[2].style.transform =
-                    "rotate(-45deg) translate(6px, -6px)";
-
-            // Prevenir scroll del body
-            document.body.style.overflow = "hidden";
-            this.isMenuOpen = true;
-        }
-
-        closeMenu(): void {
-            if (!this.menuOverlay || !this.menuLines) return;
-
-            this.menuOverlay.classList.remove("opacity-100", "visible");
-            this.menuOverlay.classList.add("opacity-0", "invisible");
-
-            // Restaurar hamburger
-            if (this.menuLines[0]) this.menuLines[0].style.transform = "none";
-            if (this.menuLines[1]) this.menuLines[1].style.opacity = "1";
-            if (this.menuLines[2]) this.menuLines[2].style.transform = "none";
-
-            // Restaurar scroll del body
-            document.body.style.overflow = "auto";
-            this.isMenuOpen = false;
-        }
+    // Ajustar tamaño del canvas
+    function resizeCanvas() {
+      canvas.width = header.offsetWidth;
+      canvas.height = header.offsetHeight;
     }
 
-    // Registrar el elemento personalizado
-    customElements.define("mobile-menu-toggle", MobileMenuToggle);
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // Configuración de partículas
+    interface Particle {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      color: string;
+      alpha: number;
+    }
+
+    const particles: Particle[] = [];
+    const colors = ["rgba(255, 204, 0, 0.9)", "rgba(100, 180, 255, 0.9)"]; // Amarillo y Azul
+
+    // Crear partículas
+    function createParticles(scrollDelta: number) {
+      const particleCount = Math.min(10, Math.floor(scrollDelta / 5));
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: canvas.height,
+          size: Math.random() * 2 + 1,
+          speedX: (Math.random() - 0.5) * 2,
+          speedY: -(Math.random() * 3 + 2),
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: 1,
+        });
+      }
+    }
+
+    // Actualizar y dibujar partículas
+    function updateParticles() {
+      if (!ctx) return;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.alpha -= 0.01;
+
+        if (p.alpha <= 0) {
+          particles.splice(i, 1);
+          continue;
+        }
+
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(updateParticles);
+    }
+
+    // Iniciar animación de partículas
+    updateParticles();
+
+    // Efecto de scroll en el header
+    const baseClasses =
+      "fixed top-0 left-0 right-0 flex justify-between items-center p-4 z-50 transition-all duration-300 overflow-hidden";
+    const normalClasses =
+      "pt-12 bg-gradient-to-r from-blue-900/1 via-blue-800/1 to-blue-900/1 backdrop-blur-sm";
+    const scrolledClasses =
+      "pt-8 bg-gradient-to-r from-blue-900/2 via-blue-800/2 to-blue-900/2 backdrop-blur-sm";
+
+    let lastScrollTop = 0;
+    function handleScroll() {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollDelta = Math.abs(scrollTop - lastScrollTop);
+
+      if (scrollTop > 50) {
+        header.className = `${baseClasses} ${scrolledClasses}`;
+
+        // Crear partículas según la velocidad del scroll
+        if (scrollDelta > 5) {
+          createParticles(scrollDelta);
+        }
+      } else {
+        header.className = `${baseClasses} ${normalClasses}`;
+      }
+
+      lastScrollTop = scrollTop;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+  });
+
+  // Custom Element para el menú móvil
+  class MobileMenuToggle extends HTMLElement {
+    menuOverlay: HTMLElement | null = null;
+    closeMenuButton: HTMLElement | null = null;
+    menuLines: NodeListOf<HTMLSpanElement> | null = null;
+    isMenuOpen: boolean = false;
+
+    constructor() {
+      super();
+      this.isMenuOpen = false;
+
+      this.addEventListener("click", () => {
+        this.toggleMenu();
+      });
+    }
+
+    connectedCallback() {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+          this.initializeMenu();
+        });
+      } else {
+        this.initializeMenu();
+      }
+    }
+
+    initializeMenu(): void {
+      this.menuOverlay = document.getElementById("menuOverlay");
+      this.closeMenuButton = document.getElementById("closeMenu");
+      this.menuLines = this.querySelectorAll("span");
+
+      if (this.closeMenuButton) {
+        this.closeMenuButton.addEventListener("click", () => {
+          this.closeMenu();
+        });
+      }
+
+      if (this.menuOverlay) {
+        this.menuOverlay.addEventListener("click", (e: Event) => {
+          if (e.target === this.menuOverlay) {
+            this.closeMenu();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (e: KeyboardEvent) => {
+        if (e.key === "Escape" && this.isMenuOpen) {
+          this.closeMenu();
+        }
+      });
+    }
+
+    toggleMenu(): void {
+      if (!this.menuOverlay) return;
+
+      if (this.isMenuOpen) {
+        this.closeMenu();
+      } else {
+        this.openMenu();
+      }
+    }
+
+    openMenu(): void {
+      if (!this.menuOverlay || !this.menuLines) return;
+
+      this.menuOverlay.classList.remove("opacity-0", "invisible");
+      this.menuOverlay.classList.add("opacity-100", "visible");
+
+      if (this.menuLines[0])
+        this.menuLines[0].style.transform = "rotate(45deg) translate(6px, 6px)";
+      if (this.menuLines[1]) this.menuLines[1].style.opacity = "0";
+      if (this.menuLines[2])
+        this.menuLines[2].style.transform =
+          "rotate(-45deg) translate(6px, -6px)";
+
+      document.body.style.overflow = "hidden";
+      this.isMenuOpen = true;
+    }
+
+    closeMenu(): void {
+      if (!this.menuOverlay || !this.menuLines) return;
+
+      this.menuOverlay.classList.remove("opacity-100", "visible");
+      this.menuOverlay.classList.add("opacity-0", "invisible");
+
+      if (this.menuLines[0]) this.menuLines[0].style.transform = "none";
+      if (this.menuLines[1]) this.menuLines[1].style.opacity = "1";
+      if (this.menuLines[2]) this.menuLines[2].style.transform = "none";
+
+      document.body.style.overflow = "auto";
+      this.isMenuOpen = false;
+    }
+  }
+
+  // Registrar el elemento personalizado
+  customElements.define("mobile-menu-toggle", MobileMenuToggle);
 </script>
+
+<style>
+  /* Estilos adicionales para mejorar el efecto visual */
+  #particle-canvas {
+    z-index: 1;
+  }
+
+  #main-header > *:not(canvas) {
+    z-index: 2;
+    position: relative;
+  }
+
+  /* Forzar estilos amarillos para el menú */
+  #menu-toggle {
+    background-color: rgba(0, 0, 0, 0.6) !important; /* negro opaco */
+    border-color: rgba(0, 0, 0, 0.4) !important;
+  }
+
+  #menu-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-color: rgba(0, 0, 0, 0.6) !important;
+  }
+
+  #menu-toggle span {
+    background-color: #fbbf24 !important; /* amarillo */
+  }
+</style>
